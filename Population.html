@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Data Analysis</title>
+    <title>Population</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -1718,9 +1718,9 @@ init_mathjax();
 
     <!-- Open Graph tags -->
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Data Analysis"/>
-            <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R/nb3.html"/>
-            <meta property="og:description" content="Lecture 16: Analysing and Visualizing Data I¶ In [1]: %load_ext rmagic Today's lecture topics: Bivariate Analysis: visualizing population clusters and variable relations Multivariate Analysis: Visualization Multivariate analysis: Clustering 1. Bivariate Analysis: visualizing population clusters and variable relations¶ Consider a population for which one has only two variables. As example ..."/>
+            <meta property="og:title" content="Population"/>
+            <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R/Population.html"/>
+            <meta property="og:description" content="In the this notebook, we will focus on visualizing population analysis, which amounts to finding clusters of individuals in our population from the collected data. We also described the hclust function that unravells a hierchical cluster structure in the data, and we explain how to visualize this hierarchical structure in ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://benoitdherin.github.io/data-analysis-with-R/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1792,10 +1792,10 @@ Data Analysis with R            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://benoitdherin.github.io/data-analysis-with-R/nb3.html"
+                    <a href="http://benoitdherin.github.io/data-analysis-with-R/Population.html"
                        rel="bookmark"
-                       title="Permalink to Data Analysis">
-                        Data Analysis
+                       title="Permalink to Population">
+                        Population
                     </a>
                 </h1>
             </header>
@@ -1815,9 +1815,9 @@ Data Analysis with R            </a>
                 </div>
                 <p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Lecture-16:-Analysing-and-Visualizing-Data-I">Lecture 16: Analysing and Visualizing Data I<a class="anchor-link" href="#Lecture-16:-Analysing-and-Visualizing-Data-I">&#182;</a></h1>
+<p>In the this notebook, we will focus on <strong>visualizing population analysis</strong>, which amounts to finding clusters of individuals in our population from the collected data.</p>
+<p>We also described the <code>hclust</code> function that unravells <strong>a hierchical cluster structure</strong> in the data, and we explain how to <strong>visualize this hierarchical structure</strong> in terms of a <strong>dendrogram plot</strong>.</p>
 </div>
-
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
@@ -1830,14 +1830,6 @@ In&nbsp;[1]:
 </div>
 </div>
 
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="todays-lecture-topics">Today's lecture topics:</h2>
-<ul>
-<li><p><strong>Bivariate Analysis:</strong> visualizing <strong>population clusters</strong> and <strong>variable relations</strong></p></li>
-<li><p><strong>Multivariate Analysis:</strong> Visualization</p></li>
-<li><p><strong>Multivariate analysis:</strong> Clustering</p></li>
-</ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="1.-Bivariate-Analysis:-visualizing-population-clusters-and-variable-relations">1. Bivariate Analysis: visualizing population clusters and variable relations<a class="anchor-link" href="#1.-Bivariate-Analysis:-visualizing-population-clusters-and-variable-relations">&#182;</a></h2>

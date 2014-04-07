@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Project Report</title>
+    <title>Variables</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -1718,9 +1718,9 @@ init_mathjax();
 
     <!-- Open Graph tags -->
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Project Report"/>
-            <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R/nb4.html"/>
-            <meta property="og:description" content="Lecture 17: Analysing and Visualizing Data II¶ In [1]: %load_ext rmagic %R rm() In [2]: %%R NL = function() cat('\n\n') This notebook topics: In the last notebook, we focused on visualizing population clusters and variable relationships with scatterplots. We also described the hclust function that unravells a hierchical cluster ..."/>
+            <meta property="og:title" content="Variables"/>
+            <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R/Variables.html"/>
+            <meta property="og:description" content="Today's we will focus on linear regression techniques to analyse (linear) variable relationships. Simulating and visualizing clusters and relations (reminder) Computing and visualizing a regression Interpreting and predicting with a regression In [1]: %load_ext rmagic %R rm() In [2]: %%R NL = function() cat('\n\n') Simulating and visualizing clusters ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://benoitdherin.github.io/data-analysis-with-R/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1792,10 +1792,10 @@ Data Analysis with R            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://benoitdherin.github.io/data-analysis-with-R/nb4.html"
+                    <a href="http://benoitdherin.github.io/data-analysis-with-R/Variables.html"
                        rel="bookmark"
-                       title="Permalink to Project Report">
-                        Project Report
+                       title="Permalink to Variables">
+                        Variables
                     </a>
                 </h1>
             </header>
@@ -1815,9 +1815,13 @@ Data Analysis with R            </a>
                 </div>
                 <p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Lecture-17:-Analysing-and-Visualizing-Data-II">Lecture 17: Analysing and Visualizing Data II<a class="anchor-link" href="#Lecture-17:-Analysing-and-Visualizing-Data-II">&#182;</a></h1>
+<p>Today's we will focus on <strong>linear regression techniques</strong> to analyse <strong>(linear) variable relationships</strong>.</p>
+<ul>
+<li><p><strong>Simulating and visualizing clusters and relations</strong> (reminder)</p></li>
+<li><p><strong>Computing and visualizing a regression</strong></p></li>
+<li><p><strong>Interpreting and predicting with a regression</strong></p></li>
+</ul>
 </div>
-
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
@@ -1845,16 +1849,6 @@ In&nbsp;[2]:
 </div>
 </div>
 
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="this-notebook-topics">This notebook topics:</h2>
-<p>In the last notebook, we focused on <strong>visualizing population clusters and variable relationships with scatterplots</strong>. We also described the <code>hclust</code> function that unravells <strong>a hierchical cluster structure</strong> in the data, and we explain how to <strong>visualize this hierarchical structure</strong> in terms of a <strong>dendrogram plot</strong>.</p>
-<p>Today's we will focus on <strong>linear regression techniques</strong> to analyse <strong>(linear) variable relationships</strong>.</p>
-<ul>
-<li><p><strong>Simulating and visualizing clusters and relations</strong> (reminder)</p></li>
-<li><p><strong>Computing and visualizing a regression</strong></p></li>
-<li><p><strong>Interpreting and predicting with a regression</strong></p></li>
-</ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Simulating-and-visualizing-clusters-and-relations-(reminder)">Simulating and visualizing clusters and relations (reminder)<a class="anchor-link" href="#Simulating-and-visualizing-clusters-and-relations-(reminder)">&#182;</a></h2>

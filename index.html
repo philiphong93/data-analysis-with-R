@@ -1789,12 +1789,84 @@ Data Analysis with R            </a>
         <div class="col-sm-9">
 
             <article>
-                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/nb4.html">Project Report</a></h2>
+                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/Dimensions.html">Dimensions</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Lecture-17:-Analysing-and-Visualizing-Data-II">Lecture 17: Analysing and Visualizing Data II<a class="anchor-link" href="#Lecture-17:-Analysing-and-Visualizing-Data-II">&#182;</a></h1>
+<h1 id="lecture-13---the-data-analysis-process">Lecture 13 - The Data Analysis Process</h1>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Lecture outline:</strong></p>
+<ul>
+<li><p>What is Data Analysis?</p></li>
+<li><p>The three dimensions of Data: Population, Variables, and Time</p></li>
+<li><p>Determining the ideal data cube for your question/problem</p></li>
+<li><p>Further useful online ressources</p></li>
+</ul>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
+</pre></div>
+
+</div>
 </div>
 
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-is-Data-Analysis?">What is Data Analysis?<a class="anchor-link" href="#What-is-Data-Analysis?">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="selected-parts-of-the-coursera-data-analysis-lecture-by-jeff-leek">Selected parts of the coursera <a href="https://class.coursera.org/dataanalysis-002/class/index">Data Analysis Lecture ...</a></h4></div></p>
+                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/Dimensions.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/Reproducibility.html">Reproducibility</a></h2>
+                <div class="summary"><p>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div></p>
+                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/Reproducibility.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/Time.html">Time</a></h2>
+                <div class="summary"><p>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will discuss here temporal aspects of data anlysis.</p>
+</div></p>
+                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/Time.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/Variables.html">Variables</a></h2>
+                <div class="summary"><p>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Today's we will focus on <strong>linear regression techniques</strong> to analyse <strong>(linear) variable relationships</strong>.</p>
+<ul>
+<li><p><strong>Simulating and visualizing clusters and relations</strong> (reminder)</p></li>
+<li><p><strong>Computing and visualizing a regression</strong></p></li>
+<li><p><strong>Interpreting and predicting with a regression</strong></p></li>
+</ul>
+</div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
@@ -1824,75 +1896,24 @@ In&nbsp;[2]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="this-notebook-topics">This notebook topics:</h2>
-<p>In the last notebook, we focused on <strong>visualizing population clusters and variable relationships with scatterplots</strong>. We also described the <code>hclust</code> function that unravells <strong>a hierchical cluster ...</strong></p></div></p>
-                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/nb4.html">more ...</a>
+<h2 id="Simulating-and-visualizing-clusters-and-relations-(reminder)">Simulating and visualizing clusters ...</h2></div></p>
+                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/Variables.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/nb3.html">Data Analysis</a></h2>
+                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/Population.html">Population</a></h2>
                 <div class="summary"><p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Lecture-16:-Analysing-and-Visualizing-Data-I">Lecture 16: Analysing and Visualizing Data I<a class="anchor-link" href="#Lecture-16:-Analysing-and-Visualizing-Data-I">&#182;</a></h1>
-</div>
-
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[1]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
-</pre></div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="todays-lecture-topics">Today's lecture topics:</h2>
-<ul>
-<li><p><strong>Bivariate Analysis:</strong> visualizing <strong>population clusters</strong> and <strong>variable relations</strong></p></li>
-<li><p><strong>Multivariate Analysis:</strong> Visualization</p></li>
-<li><p><strong>Multivariate analysis:</strong> Clustering</p></li>
-</ul>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Bivariate-Analysis:-visualizing-population-clusters-and-variable-relations">1. Bivariate Analysis: visualizing population clusters and variable relations<a class="anchor-link" href="#1.-Bivariate-Analysis:-visualizing-population-clusters-and-variable-relations">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider a <strong>population</strong> for which one has only <strong>two variables</strong>.</p>
-<p>As example ...</p></div></p>
-                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/nb3.html">more ...</a>
+<p>In the this notebook, we will focus on <strong>visualizing population analysis</strong>, which amounts to finding clusters of individuals in our population from the collected data.</p>
+<p>We also described the <code>hclust</code> function that unravells <strong>a hierchical cluster structure</strong> in the data, and we explain how to <strong>visualize this hierarchical structure</strong> in ...</p></div></p>
+                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/Population.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/nb2.html">Data Cleaning</a></h2>
+                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/Preparation.html">Preparation</a></h2>
                 <div class="summary"><p>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Lecture-15:-Cleaning-data">Lecture 15: Cleaning data<a class="anchor-link" href="#Lecture-15:-Cleaning-data">&#182;</a></h1>
-</div>
-
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[1]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
-</pre></div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-gathering-and-data-cleaning">Data gathering and data cleaning<a class="anchor-link" href="#Data-gathering-and-data-cleaning">&#182;</a></h2>
-</div>
-
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <strong>preparation of data</strong> for analysis can be slip in <strong>two steps</strong>:</p>
 <ul>
@@ -1905,27 +1926,10 @@ In&nbsp;[1]:
 <li><a href="https://drive.google.com/a/berkeley.edu/file/d/0B5rZViyRAaZqVC0wVlc5SWlKZU0/edit?usp=sharing">NB2_data_cleaning.ipynb</a></li>
 </ul>
 </div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Data-gathering">Data gathering<a class="anchor-link" href="#Data-gathering">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>various ...</strong></p></div></p>
-                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/nb2.html">more ...</a>
-                </div>
-            </article>
-            <hr/>
-            <article>
-                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/nb1.html">Data Gathering</a></h2>
-                <div class="summary"><p>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Lecture-14:-Data-gathering">Lecture 14: Data gathering<a class="anchor-link" href="#Lecture-14:-Data-gathering">&#182;</a></h1>
-</div>
-
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[6]:
+In&nbsp;[1]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
@@ -1934,45 +1938,28 @@ In&nbsp;[6]:
 </div>
 </div>
 
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-The rmagic extension is already loaded. To reload it, use:
-  %reload_ext rmagic
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="File-and-directory-manipulations">File and directory manipulations<a class="anchor-link" href="#File-and-directory-manipulations">&#182;</a></h2>
+<h3 id="Data-gathering">Data gathering<a class="anchor-link" href="#Data-gathering">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>R offers a bunch of functions to</p>
-<ul>
-<li><p><strong>list the files and directories</strong> (see <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/list.files.html">here</a>):</p>
-<pre><code>list.files(path = &quot;.&quot;)    
-list.dirs(path = &quot;.&quot;)</code></pre></li>
-<li><p><strong>create and modify files</strong> (see <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/files.html">here ...</a></p></li></ul></div></p>
-                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/nb1.html">more ...</a>
+<p><strong>various data sources</strong> (XML, jason, HTML, etc.) <span class="math">\(\longrightarrow\)</span> <strong>raw data ...</strong></p></div></p>
+                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/Preparation.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
-                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/reproducibility.html">Reproducibility</a></h2>
-                <div class="summary"><h1>Reproducibility</h1>
-<h2>Virtual OskiBox</h2>
-<h2>Software Requirements</h2>
-                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/reproducibility.html">more ...</a>
+                <h2><a href="http://benoitdherin.github.io/data-analysis-with-R/Collectionnb1.html">Collection</a></h2>
+                <div class="summary"><p>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Often times the data comes from various source and needs to be unified and structured before analysis can take place. In this notebook, we will gather data from the internet structured as a graphs. The goal will be to retrieve the data and put it in regular cubical form.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In ...</div></div></div></p>
+                    <a class="btn btn-default btn-xs" href="http://benoitdherin.github.io/data-analysis-with-R/Collectionnb1.html">more ...</a>
                 </div>
             </article>
             <hr/>

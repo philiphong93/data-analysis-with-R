@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Data Analysis with R - Categories</title>
+    <title>Collection</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -1717,10 +1717,10 @@ init_mathjax();
 
 
     <!-- Open Graph tags -->
-            <meta property="og:type" content="website"/>
-            <meta property="og:title" content="Data Analysis with R"/>
-            <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R"/>
-            <meta property="og:description" content="Data Analysis with R"/>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Collection"/>
+            <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R/Collectionnb1.html"/>
+            <meta property="og:description" content="Often times the data comes from various source and needs to be unified and structured before analysis can take place. In this notebook, we will gather data from the internet structured as a graphs. The goal will be to retrieve the data and put it in regular cubical form. In ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://benoitdherin.github.io/data-analysis-with-R/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1788,30 +1788,1700 @@ Data Analysis with R            </a>
     <div class="row">
         <div class="col-sm-9">
 
-    <section id="categories">
-        <h1>All Categories for Data Analysis with R</h1>
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-misc">misc <span class="badge pull-right">7</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-misc" class="panel-collapse collapse">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://benoitdherin.github.io/data-analysis-with-R/Collectionnb1.html"
+                       rel="bookmark"
+                       title="Permalink to Collection">
+                        Collection
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
                     <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2014-03-04T00:00:00">Tue 04 March 2014</time></span> <a href="http://benoitdherin.github.io/data-analysis-with-R/Dimensions.html">Dimensions</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2014-03-04T00:00:00">Tue 04 March 2014</time></span> <a href="http://benoitdherin.github.io/data-analysis-with-R/Reproducibility.html">Reproducibility</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2014-03-04T00:00:00">Tue 04 March 2014</time></span> <a href="http://benoitdherin.github.io/data-analysis-with-R/Time.html">Time</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2014-03-04T00:00:00">Tue 04 March 2014</time></span> <a href="http://benoitdherin.github.io/data-analysis-with-R/Variables.html">Variables</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2014-03-03T00:00:00">Mon 03 March 2014</time></span> <a href="http://benoitdherin.github.io/data-analysis-with-R/Population.html">Population</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2014-03-02T00:00:00">Sun 02 March 2014</time></span> <a href="http://benoitdherin.github.io/data-analysis-with-R/Preparation.html">Preparation</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2014-03-01T00:00:00">Sat 01 March 2014</time></span> <a href="http://benoitdherin.github.io/data-analysis-with-R/Collectionnb1.html">Collection</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2014-03-01T00:00:00">Sat 01 March 2014</time>
+    </span>
 
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Often times the data comes from various source and needs to be unified and structured before analysis can take place. In this notebook, we will gather data from the internet structured as a graphs. The goal will be to retrieve the data and put it in regular cubical form.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%</span><span class="k">load_ext</span> <span class="n">rmagic</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+The rmagic extension is already loaded. To reload it, use:
+  %reload_ext rmagic
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="File-and-directory-manipulations">File and directory manipulations<a class="anchor-link" href="#File-and-directory-manipulations">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>R offers a bunch of functions to</p>
+<ul>
+<li><p><strong>list the files and directories</strong> (see <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/list.files.html">here</a>):</p>
+<pre><code>list.files(path = &quot;.&quot;)    
+list.dirs(path = &quot;.&quot;)</code></pre></li>
+<li><p><strong>create and modify files</strong> (see <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/files.html">here</a> for details):</p>
+<pre><code>file.create(path1, path2, etc.)
+file.remove(path1, path2, etc.)</code></pre></li>
+<li><p><strong>create directories</strong> (see <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/files2.html">here</a> for details)</p>
+<pre><code>dir.create(path)</code></pre></li>
+<li><p><strong>navigate the file system</strong> (see <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/getwd.html">here</a>):</p>
+<pre><code>getwd()
+setwd(dir)</code></pre></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us create</p>
+<ul>
+<li><p>a directory <code>'DATA'</code> to help us organize our data</p></li>
+<li><p>a subdirectory <code>'raw'</code> to store the <strong>raw data</strong> collected from the web</p></li>
+<li><p>a subdirectory <code>'cleaned'</code> to stored our final data after having cleaned the raw data</p></li>
+</ul>
+<p>and then let us set move to the raw directory.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">data_dir</span>    <span class="o">=</span> <span class="s">&#39;./data&#39;</span>
+<span class="n">raw_dir</span>     <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s">&#39;/raw&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+<span class="n">cleaned_dir</span> <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="s">&#39;/cleaned&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+<span class="nb">dir</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
+<span class="nb">dir</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">)</span>
+<span class="nb">dir</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">cleaned_dir</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">!</span>ls data/
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+<span class="ansiblue">cleaned</span> <span class="ansiblue">raw</span>
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Downloading-files-from-the-web">Downloading files from the web<a class="anchor-link" href="#Downloading-files-from-the-web">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To download a file from the internet in R and store it on the local file system, one uses the function:</p>
+<pre><code>    download.file(fileUrl, destfile, method=&quot;curl&quot;)
+    </code></pre>
+<p>It is also a <strong>good practice to keep track of the date</strong> the data was downloaded, since data from the web may likely be updated. For that, one can</p>
+<ul>
+<li><p>retrieve the current data with the function <code>date()</code></p></li>
+<li><p>include the date as part of the data file name</p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example:</strong> The <a href="https://data.baltimorecity.gov/Transportation/Baltimore-Fixed-Speed-Cameras/dz54-2aru">city of Baltimore</a> offers an <strong>API</strong> (Application Programming Interface) allowing us to gather data on speed infractions in <strong>different formats</strong>:</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p><strong>csv</strong> (Comma Separated Values)</p></li>
+<li><p><strong>xml</strong> (Extensible Markup Language)</p></li>
+<li><p><strong>jason</strong> (JavaScript Object Notation)</p></li>
+<li><p><strong>xls</strong> (Microsoft Excel file format)</p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To access this different data format, one neeed to use different urls:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[7]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">csv_url</span> <span class="o">=</span> <span class="s">&#39;https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?accessType=DOWNLOAD&#39;</span>
+
+<span class="n">xml_url</span> <span class="o">=</span> <span class="s">&#39;https://data.baltimorecity.gov/api/views/dz54-2aru/rows.xml?accessType=DOWNLOAD&#39;</span>
+
+<span class="n">jason_url</span> <span class="o">=</span> <span class="s">&#39;https://data.baltimorecity.gov/api/views/dz54-2aru/rows.json?accessType=DOWNLOAD&#39;</span>
+
+<span class="n">xls_url</span> <span class="o">=</span> <span class="s">&#39;https://data.baltimorecity.gov/api/views/dz54-2aru/rows.xls?accessType=DOWNLOAD&#39;</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us prepare prepare the names of the files in which we will store the data:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[11]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">strsplit</span><span class="p">(</span><span class="n">date</span><span class="p">(),</span> <span class="n">split</span><span class="o">=</span><span class="s">&#39; &#39;</span><span class="p">)[[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">collapse</span><span class="o">=</span><span class="s">&#39;_&#39;</span><span class="p">)</span>
+
+<span class="n">csv_file</span>     <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">,</span><span class="s">&#39;/cameras_&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="s">&#39;.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+<span class="n">xml_file</span>     <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">,</span><span class="s">&#39;/cameras_&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="s">&#39;.xml&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+<span class="n">jason_file</span>   <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">,</span><span class="s">&#39;/cameras_&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="s">&#39;.jason&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+<span class="n">xls_file</span>     <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">,</span><span class="s">&#39;/cameras_&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="s">&#39;.xls&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">xml_file</span><span class="p">,</span> <span class="n">jason_file</span><span class="p">,</span> <span class="n">xls_file</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+[1] &quot;./data/raw/cameras_Tue_Nov_19_17:29:05_2013.csv&quot;  
+[2] &quot;./data/raw/cameras_Tue_Nov_19_17:29:05_2013.xml&quot;  
+[3] &quot;./data/raw/cameras_Tue_Nov_19_17:29:05_2013.jason&quot;
+[4] &quot;./data/raw/cameras_Tue_Nov_19_17:29:05_2013.xls&quot;  
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us now download the actual files:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[12]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">download</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">csv_url</span><span class="p">,</span><span class="n">destfile</span><span class="o">=</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+<span class="n">download</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">xml_url</span><span class="p">,</span><span class="n">destfile</span><span class="o">=</span><span class="n">xml_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+<span class="n">download</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">jason_url</span><span class="p">,</span><span class="n">destfile</span><span class="o">=</span><span class="n">jason_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+<span class="n">download</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">xls_url</span><span class="p">,</span><span class="n">destfile</span><span class="o">=</span><span class="n">xls_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+[1] &quot;cameras_Tue_Nov_19_17:29:05_2013.csv&quot;  
+[2] &quot;cameras_Tue_Nov_19_17:29:05_2013.jason&quot;
+[3] &quot;cameras_Tue_Nov_19_17:29:05_2013.xls&quot;  
+[4] &quot;cameras_Tue_Nov_19_17:29:05_2013.xml&quot;  
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Loading-data-into-R">Loading data into R<a class="anchor-link" href="#Loading-data-into-R">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Different data formats are loaded with different functions. The resulting R object storing the data also depends on the format.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tabular-format">Tabular format<a class="anchor-link" href="#Tabular-format">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Data files in <strong>tabular format</strong> such as <strong>csv</strong> are loaded directly into data frame with the the function:</p>
+<pre><code>read.table(file, sep, header)</code></pre>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[13]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+                         address direction      street  crossStreet
+1       S CATON AVE &amp; BENSON AVE       N/B   Caton Ave   Benson Ave
+2       S CATON AVE &amp; BENSON AVE       S/B   Caton Ave   Benson Ave
+3 WILKENS AVE &amp; PINE HEIGHTS AVE       E/B Wilkens Ave Pine Heights
+4        THE ALAMEDA &amp; E 33RD ST       S/B The Alameda      33rd St
+5        E 33RD ST &amp; THE ALAMEDA       E/B      E 33rd  The Alameda
+6        ERDMAN AVE &amp; N MACON ST       E/B      Erdman     Macon St
+                intersection                      Location.1
+1     Caton Ave &amp; Benson Ave (39.2693779962, -76.6688185297)
+2     Caton Ave &amp; Benson Ave (39.2693157898, -76.6689698176)
+3 Wilkens Ave &amp; Pine Heights  (39.2720252302, -76.676960806)
+4     The Alameda  &amp; 33rd St (39.3285013141, -76.5953545714)
+5      E 33rd  &amp; The Alameda (39.3283410623, -76.5953594625)
+6         Erdman  &amp; Macon St (39.3068045671, -76.5593167803)
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="XML-documents">XML documents<a class="anchor-link" href="#XML-documents">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-tree-structure-of-an-xml-document">The tree structure of an xml document<a class="anchor-link" href="#The-tree-structure-of-an-xml-document">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us create a simple XML document.</p>
+<p>Consider the following data for two students in a given class given in tabular form:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[14]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">file</span> <span class="n">course</span><span class="o">.</span><span class="n">csv</span>
+<span class="n">name</span><span class="p">,</span> <span class="n">midterm</span><span class="p">,</span> <span class="n">final</span><span class="p">,</span> <span class="n">homework</span><span class="p">,</span> <span class="n">section</span><span class="p">,</span> <span class="n">major</span>
+<span class="n">Bob</span> <span class="n">Durant</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">STAT</span>
+<span class="n">Agnes</span> <span class="n">Thomas</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ECON</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Writing course.csv
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let's read this data nicely into a data frame:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[15]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s">&#39;course.csv&#39;</span><span class="p">);</span> <span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+          name midterm final homework section major
+1   Bob Durant      55    88       99       1  STAT
+2 Agnes Thomas      99    90       99       2  ECON
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The same data can be stored in XML format in the following way:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">file</span> <span class="n">stat133</span><span class="o">.</span><span class="n">xml</span>
+<span class="o">&lt;</span><span class="err">?</span><span class="n">xml</span> <span class="n">version</span><span class="o">=</span><span class="s">&quot;1.0&quot;</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&quot;ISO-8859-1&quot;</span><span class="err">?</span><span class="o">&gt;</span>  
+
+
+<span class="o">&lt;</span><span class="n">stat133</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;Computing with Data&#39;</span> <span class="n">department</span><span class="o">=</span><span class="s">&#39;STAT&#39;</span><span class="o">&gt;</span>
+        
+    <span class="o">&lt;</span><span class="n">student</span> <span class="n">sid</span><span class="o">=</span><span class="s">&#39;1232243&#39;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Bob</span> <span class="n">Durant</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">midterm</span><span class="o">&gt;</span><span class="mi">55</span><span class="o">&lt;/</span><span class="n">midterm</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">final</span><span class="o">&gt;</span><span class="mi">88</span><span class="o">&lt;/</span><span class="n">final</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">homework</span><span class="o">&gt;</span><span class="mi">99</span><span class="o">&lt;/</span><span class="n">homework</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">major</span><span class="o">&gt;</span><span class="n">STAT</span><span class="o">&lt;/</span><span class="n">major</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">student</span><span class="o">&gt;</span>
+    
+    <span class="o">&lt;</span><span class="n">student</span> <span class="n">sid</span><span class="o">=</span><span class="s">&#39;3213453&#39;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">name</span><span class="o">&gt;</span><span class="n">Agnes</span> <span class="n">Thomas</span><span class="o">&lt;/</span><span class="n">name</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">midterm</span><span class="o">&gt;</span><span class="mi">99</span><span class="o">&lt;/</span><span class="n">midterm</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">final</span><span class="o">&gt;</span><span class="mi">90</span><span class="o">&lt;/</span><span class="n">final</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">homework</span><span class="o">&gt;</span><span class="mi">99</span><span class="o">&lt;/</span><span class="n">homework</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">section</span><span class="o">&gt;</span><span class="mi">2</span><span class="o">&lt;/</span><span class="n">section</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">major</span><span class="o">&gt;</span><span class="n">ECON</span><span class="o">&lt;/</span><span class="n">major</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">student</span><span class="o">&gt;</span>
+    
+<span class="o">&lt;/</span><span class="n">stat133</span><span class="o">&gt;</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first line</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt; </code></pre>
+<p>provides informations about</p>
+<ul>
+<li><p>which <strong>version of XML</strong> we are structuring our data with (version 1.0)</p></li>
+<li><p>which type of <strong>character encoding</strong> we are using (ISO-8859-1)</p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The whole course data is surrounded by two <strong>XML tags</strong></p>
+<pre><code>&lt;stat133&gt; ... &lt;/stat133&gt;</code></pre>
+<ul>
+<li><p>The <strong>first tag</strong> is an <strong>opening tag</strong> indicating the beginning of the stat 133 data:</p>
+<p><tag></p></li>
+<li><p>The <strong>second tag</strong> is a <strong>closing tag</strong> incating the end of the stat 133 data:</p>
+<p></tag></p></li>
+<li><p>Two such tags together with all the data in between tag forms an <strong>xml node</strong>:</p>
+<p><tag>...data...</tag></p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The data in between the <code>stat133</code> node is itself a <strong>collection of xml nodes</strong>:</p>
+<pre><code>&lt;student sid=&#39;1232243&#39;&gt; ... &lt;/student&gt;
+&lt;student sid=&#39;3213453&#39;&gt; ... &lt;/student&gt;</code></pre>
+<ul>
+<li><p>These nodes are the <strong>children nodes</strong> of the <strong>enclosing node</strong> (the <code>stat133</code> node here)</p></li>
+<li><p>The <strong>enclosing node</strong> is called the <strong>parent node</strong></p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Pictorially, one may represent the <strong>children/parent relationship</strong> as an <strong>arrow:</strong></p>
+<p><strong>parent node</strong> (stat133 node) <span class="math">\(\longrightarrow\)</span> <strong>children node</strong> (student node)</p>
+<p>With this interpretation, <strong>an xml document structures data in the form of a tree</strong>, called the <strong>xml tree</strong>.</p>
+<ul>
+<li><p>The <strong>root</strong> of the tree is the <strong>node whose tag encloses all other nodes</strong></p></li>
+<li><p>The <strong>leafs</strong> of the tree are the <strong>nodes enclosing no other node</strong></p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In our class example:</p>
+<ul>
+<li><p>the <strong>stat133</strong> node is the <strong>root</strong></p></li>
+<li><p>the tags enclosing <strong>actual data</strong> about the students are the <strong>leafs</strong>:</p>
+<pre><code>&lt;name&gt;Bob Durant&lt;/name&gt;
+&lt;midterm&gt;55&lt;/midterm&gt;
+&lt;final&gt;88&lt;/final&gt;
+&lt;homework&gt;99&lt;/homework&gt;
+&lt;section&gt;1&lt;/section&gt;
+&lt;major&gt;STAT&lt;/major&gt;</code></pre></li>
+</ul>
+<p>So each student node contains five leafs.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong>values</strong> of an <strong>xml node</strong> is the collection of <strong>all the data</strong> contained by <strong>all the leafs stemming from this node</strong>.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example:</strong> Consider the following xml code.</p>
+<pre><code>&lt;A&gt;
+    &lt;B&gt;value1&lt;/B&gt;
+    &lt;C&gt;value2&lt;/C&gt;
+    &lt;D&gt;
+        &lt;E&gt; 
+            &lt;G&gt;value3&lt;/G&gt; 
+        &lt;/E&gt;
+        &lt;F&gt;value4&lt;/F&gt;
+    &lt;/D&gt;
+&lt;/A&gt;</code></pre>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong>value</strong> of</p>
+<ul>
+<li><p>node A is the collection {value1, value2, value2, value4}</p></li>
+<li><p>node B is {value1}</p></li>
+<li><p>node D is {value3, value4}</p></li>
+<li><p>etc.</p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is a tree representation of the xml code above:</p>
+<div class="figure">
+<img src="http://nwalsh.com/docs/articles/extreme2003/diagrams/btree.png" title="Title" alt="xml tree" /><p class="caption">xml tree</p>
+</div>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An <strong>xml node</strong> can also have several <strong>attributes</strong>:</p>
+<pre><code>&lt;tag attribute1=value attribue2=value etc.&gt;...data...&lt;/tag&gt;</code></pre>
+<p>The <strong>node attributes</strong> are specified in the <strong>opening tag</strong>.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In our class example:</p>
+<pre><code>&lt;stat133 name=&#39;Computing with Data&#39; department=&#39;STAT&#39;&gt;
+    
+    &lt;student sid=&#39;1232243&#39;&gt; ...data... &lt;/student&gt;
+
+    &lt;student sid=&#39;3213453&#39;&gt; ...data... &lt;/student&gt;
+
+&lt;/stat133&gt;</code></pre>
+<ul>
+<li><p>the <strong>stat133 node</strong> has <strong>two attribues</strong>: <code>name</code> and <code>department</code></p></li>
+<li><p>the <strong>student nodes</strong> have only <strong>one attribute</strong>: <code>sid</code></p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="XML-node-summary">XML node summary<a class="anchor-link" href="#XML-node-summary">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Each <strong>XML node</strong> in a <strong>XML document</strong> may have</p>
+<ul>
+<li><p>several <strong>attributes</strong> specified in the <strong>opening tag</strong></p></li>
+<li><p>several <strong>children nodes</strong> in between the <strong>opening tag</strong> and the <strong>closing tag</strong></p></li>
+<li><p>one <strong>parent node</strong> enclosing it</p></li>
+<li><p>a <strong>value</strong> given by all the data enclosed by the <strong>leafs</strong> steming out of it</p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The collection of all <strong>XML nodes</strong> with the <strong>parent/children</strong> relation ship form the <strong>XML tree</strong>:</p>
+<ul>
+<li><p>the <strong>XML node</strong> enclosing all other nodes is the <strong>root</strong> of the <strong>XML document</strong></p></li>
+<li><p>the <strong>XML nodes</strong> enclosing no other nodes are the <strong>leafs</strong> of the <strong>XML document</strong></p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Parsing-an-XML-document-with-R">Parsing an XML document with R<a class="anchor-link" href="#Parsing-an-XML-document-with-R">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In R, the <strong>XML library</strong> contains <strong>functions</strong> and <strong>classes</strong> to represent <strong>XML documents</strong>.</p>
+<p><strong>Libraries</strong> in R corresponds to <strong>modules</strong> in Python.</p>
+<p>To <strong>install</strong> the XML library (if not already installed), type in this command:</p>
+<pre><code>install.packages(&#39;XML&#39;)</code></pre>
+<p>Then to use this library type in:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[16]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">library</span><span class="p">(</span><span class="n">XML</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+
+Attaching package: ‘XML’
+
+The following object(s) are masked from ‘package:tools’:
+
+    toHTML
+
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Remark:</strong> The keyword <code>library</code> in R corresponds to the <code>import</code> keyword in Python.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong>XML library</strong> provides two main classes:</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A class</p>
+<pre><code>XMLDocument</code></pre>
+<p>representing <strong>whole XML documents</strong> including</p>
+<ul>
+<li><p>The <strong>header of the XML document</strong>, that is, the <strong>data</strong> (also called <strong>meta data</strong>) contained in</p>
+<p><?xml version="1.0" encoding="ISO-8859-1"?></p></li>
+<li><p>The <strong>body of the XML document</strong>, i.e., the <strong>sequence of XML tags representing the actual data</strong></p></li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A class</p>
+<pre><code>XMLNode</code></pre>
+<p>representing the <strong>XML nodes</strong> in the <strong>XML tree</strong> where the information is stored.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first steps to load XML data into R is to use the functions:</p>
+<pre><code>xml_doc = xmlParse(file_adress)
+root_node = xmlRoot(xml_doc)</code></pre>
+<ul>
+<li><p><code>xmlParse</code> takes as input the XML file address and returns the corresponding <code>XMLDocument</code> object</p></li>
+<li><p><code>xmlRoot</code> takes an <code>XMLDocument</code> and returns the <strong>root node</strong> as a <code>XMLNode</code> object.</p></li>
+</ul>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[19]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">xml_doc</span> <span class="o">=</span> <span class="n">xmlParse</span><span class="p">(</span><span class="s">&#39;stat133.xml&#39;</span><span class="p">)</span>
+<span class="n">stat133_node</span> <span class="o">=</span> <span class="n">xmlRoot</span><span class="p">(</span><span class="n">xml_doc</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To <strong>navigate the XML tree</strong> the XML library offers the following functions:</p>
+<pre><code>xmlAttrs(node)
+xmlValue(node)
+xmlChildren(node)
+xmlParent(node)</code></pre>
+<p>that take an <code>XMLNode</code> object and return the corresponding information.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[20]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="c">#returns the attributes as a character vector</span>
+<span class="n">stat133_attrs</span> <span class="o">=</span> <span class="n">xmlAttrs</span><span class="p">(</span><span class="n">stat133_node</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">stat133_attrs</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+                 name            department 
+&quot;Computing with Data&quot;                &quot;STAT&quot; 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[21]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="c">#return the children nodes as a list of XMLNode objects</span>
+<span class="n">stat133_children</span> <span class="o">=</span> <span class="n">xmlChildren</span><span class="p">(</span><span class="n">stat133_node</span><span class="p">)</span> <span class="c"># return chi</span>
+
+<span class="n">student1_node</span> <span class="o">=</span> <span class="n">stat133_children</span><span class="p">[[</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">student2_node</span> <span class="o">=</span> <span class="n">stat133_children</span><span class="p">[[</span><span class="mi">2</span><span class="p">]]</span>
+
+<span class="c">#printing an XMLNode yields back the corresponding XML code</span>
+<span class="k">print</span><span class="p">(</span><span class="n">student1_node</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+&lt;student sid=&quot;1232243&quot;&gt;
+  &lt;name&gt;Bob Durant&lt;/name&gt;
+  &lt;midterm&gt;55&lt;/midterm&gt;
+  &lt;final&gt;88&lt;/final&gt;
+  &lt;homework&gt;99&lt;/homework&gt;
+  &lt;section&gt;1&lt;/section&gt;
+  &lt;major&gt;STAT&lt;/major&gt;
+&lt;/student&gt; 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[22]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">parent_node</span> <span class="o">=</span> <span class="n">xmlParent</span><span class="p">(</span><span class="n">student1_node</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">parent_node</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+&lt;stat133 name=&quot;Computing with Data&quot; department=&quot;STAT&quot;&gt;
+  &lt;student sid=&quot;1232243&quot;&gt;
+    &lt;name&gt;Bob Durant&lt;/name&gt;
+    &lt;midterm&gt;55&lt;/midterm&gt;
+    &lt;final&gt;88&lt;/final&gt;
+    &lt;homework&gt;99&lt;/homework&gt;
+    &lt;section&gt;1&lt;/section&gt;
+    &lt;major&gt;STAT&lt;/major&gt;
+  &lt;/student&gt;
+  &lt;student sid=&quot;3213453&quot;&gt;
+    &lt;name&gt;Agnes Thomas&lt;/name&gt;
+    &lt;midterm&gt;99&lt;/midterm&gt;
+    &lt;final&gt;90&lt;/final&gt;
+    &lt;homework&gt;99&lt;/homework&gt;
+    &lt;section&gt;2&lt;/section&gt;
+    &lt;major&gt;ECON&lt;/major&gt;
+  &lt;/student&gt;
+&lt;/stat133&gt; 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[23]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">student</span> <span class="ow">in</span> <span class="n">xmlChildren</span><span class="p">(</span><span class="n">stat133_node</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">node</span> <span class="ow">in</span> <span class="n">xmlChildren</span><span class="p">(</span><span class="n">student</span><span class="p">))</span> <span class="k">print</span><span class="p">(</span><span class="n">xmlValue</span><span class="p">(</span><span class="n">node</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+[1] &quot;Bob Durant&quot;
+[1] &quot;55&quot;
+[1] &quot;88&quot;
+[1] &quot;99&quot;
+[1] &quot;1&quot;
+[1] &quot;STAT&quot;
+[1] &quot;Agnes Thomas&quot;
+[1] &quot;99&quot;
+[1] &quot;90&quot;
+[1] &quot;99&quot;
+[1] &quot;2&quot;
+[1] &quot;ECON&quot;
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One can also <strong>retrieve a child node by its tag name</strong>, using the construct:</p>
+<pre><code>child_node = node[[&#39;name&#39;]]</code></pre>
+<p>that returns the <strong>child node</strong> corresponding to <code>'tag'</code>.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[26]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">name_node</span>  <span class="o">=</span> <span class="n">student1_node</span><span class="p">[[</span><span class="s">&#39;name&#39;</span><span class="p">]]</span>
+<span class="n">name_value</span> <span class="o">=</span> <span class="n">xmlValue</span><span class="p">(</span><span class="n">name_node</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">name_value</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+[1] &quot;Bob Durant&quot;
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong>tag names</strong> of a given <strong>node</strong> can be retrieved using the function</p>
+<pre><code>names(node)</code></pre>
+<p>that returns a <strong>character vector</strong> containing the tag names of the children nodes.</p>
+<p><strong>Remark:</strong> One can do that because an object of any class in R is just an <strong>enhanced list</strong>. Thus we can access some of the methods of the underlying list; here the <code>name</code> method that returns the element labels of a list.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[27]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">tag_names</span> <span class="o">=</span> <span class="n">names</span><span class="p">(</span><span class="n">student1_node</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">tag_names</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+      name    midterm      final   homework    section      major 
+    &quot;name&quot;  &quot;midterm&quot;    &quot;final&quot; &quot;homework&quot;  &quot;section&quot;    &quot;major&quot; 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[28]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="k">for</span><span class="p">(</span><span class="n">student</span> <span class="ow">in</span> <span class="n">xmlChildren</span><span class="p">(</span><span class="n">stat133_node</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">tag_name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">(</span><span class="n">student</span><span class="p">))</span>
+    <span class="p">{</span>
+       <span class="n">cat</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="n">xmlValue</span><span class="p">(</span><span class="n">student</span><span class="p">[[</span><span class="n">tag_name</span><span class="p">]]),</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">cat</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n</span><span class="s">-----------</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+name : Bob Durant 
+midterm : 55 
+final : 88 
+homework : 99 
+section : 1 
+major : STAT 
+
+-----------
+name : Agnes Thomas 
+midterm : 99 
+final : 90 
+homework : 99 
+section : 2 
+major : ECON 
+
+-----------
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="A-digression-on-lists:-the-double-bracket-operator">A digression on lists: the double bracket operator<a class="anchor-link" href="#A-digression-on-lists:-the-double-bracket-operator">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we saw, the <strong>single bracket operator</strong></p>
+<pre><code>list[range]</code></pre>
+<p>allows us to retrive a <strong>sublist</strong> corresponding to the <strong>range</strong>.</p>
+<p>In case, the <strong>range is a single index</strong> then</p>
+<pre><code>list[i]</code></pre>
+<p>is a <strong>sublist with one element</strong>, namely the <strong>element at position i</strong>.</p>
+<p><strong>CAUTION:</strong> A <strong>list with a single element is different that the element itself.</strong></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[29]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">element1</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">)</span>   <span class="c">#character vector</span>
+<span class="n">element2</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>             <span class="c">#numeric vector</span>
+
+<span class="n">my_list</span>  <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">element1</span><span class="p">,</span> <span class="n">element2</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[30]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="k">print</span><span class="p">(</span><span class="n">class</span><span class="p">(</span><span class="n">element1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">class</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+[1] &quot;character&quot;
+[1] &quot;list&quot;
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[31]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+[[1]]
+[1] &quot;a&quot; &quot;b&quot; &quot;c&quot;
+
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[32]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="k">print</span><span class="p">(</span><span class="n">element1</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+[1] &quot;a&quot;
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To <strong>retrieve</strong> the <strong>actual list element</strong> at a given <strong>position i</strong>, one needs to use the <strong>double bracket operator</strong>:</p>
+<pre><code>list[[i]]</code></pre>
+<p>This also valid, when one uses <strong>element labels</strong> instead of <strong>position indices</strong>:</p>
+<pre><code>list[[&#39;label&#39;]] #retrieves the actual list element 
+list[&#39;label&#39;]   #yields back a list containing the list element</code></pre>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[33]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="s">&#39;Bob&#39;</span><span class="p">,</span> <span class="s">&#39;Luc&#39;</span><span class="p">,</span> <span class="s">&#39;Paul&#39;</span><span class="p">),</span> <span class="n">grades</span><span class="o">=</span><span class="n">c</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+$names
+[1] &quot;Bob&quot;  &quot;Luc&quot;  &quot;Paul&quot;
+
+$grades
+[1] 45 76 12
+
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[34]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">&#39;names&#39;</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">[[</span><span class="s">&#39;names&#39;</span><span class="p">]])</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+$names
+[1] &quot;Bob&quot;  &quot;Luc&quot;  &quot;Paul&quot;
+
+[1] &quot;Bob&quot;  &quot;Luc&quot;  &quot;Paul&quot;
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="A-digression-on-lists:-lapply-and-sapply">A digression on lists: lapply and sapply<a class="anchor-link" href="#A-digression-on-lists:-lapply-and-sapply">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Given a <strong>function</strong> <code>f</code> and a <strong>list</strong></p>
+<p><span class="math">\[x = (x_1, x_2,\dots,x_n)\]</span></p>
+<p>the <strong>list apply</strong> function:</p>
+<pre><code>lapply(x, f)</code></pre>
+<p>will return the <strong>list</strong></p>
+<p><span class="math">\[ (f(x_1),\dots,f(x_n)). \]</span></p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[35]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">return</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">sd</span><span class="o">=</span><span class="n">sd</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+
+<span class="n">var1</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">var2</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    
+<span class="n">x</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">V1</span><span class="o">=</span><span class="n">var1</span><span class="p">,</span> <span class="n">V2</span><span class="o">=</span><span class="n">var2</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">lapply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+$V1
+    mean       sd 
+4.750000 2.815772 
+
+$V2
+mean   sd 
+  18   16 
+
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now suppose the function <span class="math">\(f\)</span> returns a single number from a numeric vector:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[36]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">return</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">lapply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+$V1
+[1] 4.75
+
+$V2
+[1] 18
+
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this case, it makes sense that the <strong>output</strong> of <strong>lapply</strong> would rather be a <strong>numeric vector</strong> rather than a <strong>list of numeric vectors with one element each</strong>.</p>
+<p>For that purpose, one has the <strong>simplify apply function</strong></p>
+<pre><code>sapply(x, f, args)</code></pre>
+<p>that will try to simplify the <strong>output</strong> into a vector of the proper type.</p>
+<p><strong>Remark:</strong> The last argument <code>args</code> can be omitted, but it can also be used to pass additional parameters to the function <span class="math">\(f\)</span>, if needed.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[37]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">sapply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+   V1    V2 
+ 4.75 18.00 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="From-XML-document-to-data-frames">From XML document to data frames<a class="anchor-link" href="#From-XML-document-to-data-frames">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once data has been</p>
+<ul>
+<li>downloaded into the local file system in some given format</li>
+<li>uploaded onto R using the appropriate library</li>
+</ul>
+<p>one needs to convert the data representation into <strong>data frames</strong>.</p>
+<p>Namely, <strong>data analysis methods</strong> mostly applies to data put <strong>data cubes</strong> or <strong>data frames</strong>.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Data in loaded onto R as <strong>XML documents</strong> are not immediately ready for analysis.</p>
+<p>To convert them into <strong>data frame</strong>, one may use complicated <code>for</code> loops and branching statements.</p>
+<p>A <strong>much better way</strong> is to use <strong>R built-in vectorized capabilities</strong> along with the <strong>apply</strong> function family.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As an example, let's try to transform our <strong>XML object</strong> representation of the class data back into a data frame:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[38]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="k">print</span><span class="p">(</span><span class="n">stat133_node</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+&lt;stat133 name=&quot;Computing with Data&quot; department=&quot;STAT&quot;&gt;
+  &lt;student sid=&quot;1232243&quot;&gt;
+    &lt;name&gt;Bob Durant&lt;/name&gt;
+    &lt;midterm&gt;55&lt;/midterm&gt;
+    &lt;final&gt;88&lt;/final&gt;
+    &lt;homework&gt;99&lt;/homework&gt;
+    &lt;section&gt;1&lt;/section&gt;
+    &lt;major&gt;STAT&lt;/major&gt;
+  &lt;/student&gt;
+  &lt;student sid=&quot;3213453&quot;&gt;
+    &lt;name&gt;Agnes Thomas&lt;/name&gt;
+    &lt;midterm&gt;99&lt;/midterm&gt;
+    &lt;final&gt;90&lt;/final&gt;
+    &lt;homework&gt;99&lt;/homework&gt;
+    &lt;section&gt;2&lt;/section&gt;
+    &lt;major&gt;ECON&lt;/major&gt;
+  &lt;/student&gt;
+&lt;/stat133&gt; 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Given</p>
+<ul>
+<li>a list of the <strong>student nodes</strong></li>
+<li>a <strong>tag name</strong> such as 'final'</li>
+</ul>
+<p>one may be able to construct a <strong>vector</strong> representing the the values of corresponding variable.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[39]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">students</span> <span class="o">=</span> <span class="n">xmlChildren</span><span class="p">(</span><span class="n">stat133_node</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let us now write a function that</p>
+<ul>
+<li><p>takes a <strong>student node</strong> and a <strong>tag name</strong> as input</p></li>
+<li><p>returns the <strong>tag value</strong> for the corresponding student</p></li>
+</ul>
+<p>The idea is then to <strong>apply</strong> this function to the <strong>list</strong> of students, we have just constructed:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[40]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">get_value</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span> <span class="k">return</span><span class="p">(</span><span class="n">xmlValue</span><span class="p">(</span><span class="n">node</span><span class="p">[[</span><span class="n">tag</span><span class="p">]]))</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="n">get_value</span><span class="p">(</span><span class="n">students</span><span class="p">[[</span><span class="mi">1</span><span class="p">]],</span> <span class="s">&#39;name&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+[1] &quot;Bob Durant&quot;
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using this function along with apply, we can now extract the first column or our data frame:</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[42]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">names</span> <span class="o">=</span> <span class="n">sapply</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">get_value</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+       student        student 
+  &quot;Bob Durant&quot; &quot;Agnes Thomas&quot; 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can now package this line of code into a function that takes a list of students and</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[49]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">student_nodes</span><span class="p">)</span> <span class="k">return</span><span class="p">(</span><span class="n">sapply</span><span class="p">(</span><span class="n">student_nodes</span><span class="p">,</span> <span class="n">get_value</span><span class="p">,</span> <span class="n">tag</span><span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="s">&#39;midterm&#39;</span><span class="p">,</span> <span class="n">students</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+student student 
+   &quot;55&quot;    &quot;99&quot; 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[50]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">tag_names</span> <span class="o">=</span> <span class="n">names</span><span class="p">(</span><span class="n">students</span><span class="p">[[</span><span class="mi">1</span><span class="p">]])</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">lapply</span><span class="p">(</span><span class="n">tag_names</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">students</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[51]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+          name midterm final homework section major
+1   Bob Durant      55    88       99       1  STAT
+2 Agnes Thomas      99    90       99       2  ECON
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div></p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
     </section>
+
         </div>
         <div class="col-sm-3 well well-sm" id="sidebar">
 

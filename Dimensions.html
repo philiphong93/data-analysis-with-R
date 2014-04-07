@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>Data Cleaning</title>
+    <title>Dimensions</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -1718,9 +1718,9 @@ init_mathjax();
 
     <!-- Open Graph tags -->
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="Data Cleaning"/>
-            <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R/nb2.html"/>
-            <meta property="og:description" content="Lecture 15: Cleaning data¶ In [1]: %load_ext rmagic Data gathering and data cleaning¶ The preparation of data for analysis can be slip in two steps: data gathering data cleaning In your class project, you'll create a notebook for each of these steps: NB1_data_gathering.ipynb NB2_data_cleaning.ipynb Data gathering¶ various ..."/>
+            <meta property="og:title" content="Dimensions"/>
+            <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R/Dimensions.html"/>
+            <meta property="og:description" content="Lecture 13 - The Data Analysis Process Lecture outline: What is Data Analysis? The three dimensions of Data: Population, Variables, and Time Determining the ideal data cube for your question/problem Further useful online ressources In [1]: %load_ext rmagic What is Data Analysis?¶ Selected parts of the coursera Data Analysis Lecture ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://benoitdherin.github.io/data-analysis-with-R/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1792,10 +1792,10 @@ Data Analysis with R            </a>
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="http://benoitdherin.github.io/data-analysis-with-R/nb2.html"
+                    <a href="http://benoitdherin.github.io/data-analysis-with-R/Dimensions.html"
                        rel="bookmark"
-                       title="Permalink to Data Cleaning">
-                        Data Cleaning
+                       title="Permalink to Dimensions">
+                        Dimensions
                     </a>
                 </h1>
             </header>
@@ -1805,7 +1805,7 @@ Data Analysis with R            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2014-03-02T00:00:00">Sun 02 March 2014</time>
+        <i class="fa fa-calendar"></i><time datetime="2014-03-04T00:00:00">Tue 04 March 2014</time>
     </span>
 
 
@@ -1815,9 +1815,17 @@ Data Analysis with R            </a>
                 </div>
                 <p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Lecture-15:-Cleaning-data">Lecture 15: Cleaning data<a class="anchor-link" href="#Lecture-15:-Cleaning-data">&#182;</a></h1>
+<h1 id="lecture-13---the-data-analysis-process">Lecture 13 - The Data Analysis Process</h1>
 </div>
-
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Lecture outline:</strong></p>
+<ul>
+<li><p>What is Data Analysis?</p></li>
+<li><p>The three dimensions of Data: Population, Variables, and Time</p></li>
+<li><p>Determining the ideal data cube for your question/problem</p></li>
+<li><p>Further useful online ressources</p></li>
+</ul>
+</div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
@@ -1832,2021 +1840,458 @@ In&nbsp;[1]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-gathering-and-data-cleaning">Data gathering and data cleaning<a class="anchor-link" href="#Data-gathering-and-data-cleaning">&#182;</a></h2>
+<h2 id="What-is-Data-Analysis?">What is Data Analysis?<a class="anchor-link" href="#What-is-Data-Analysis?">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <strong>preparation of data</strong> for analysis can be slip in <strong>two steps</strong>:</p>
+<h4 id="selected-parts-of-the-coursera-data-analysis-lecture-by-jeff-leek">Selected parts of the coursera <a href="https://class.coursera.org/dataanalysis-002/class/index">Data Analysis Lecture</a> by Jeff Leek</h4>
 <ul>
-<li><p><strong>data gathering</strong></p></li>
-<li><p><strong>data cleaning</strong></p></li>
-</ul>
-<p>In your <a href="http://nbviewer.ipython.org/urls/db.tt/M0xXxn2j">class project</a>, you'll create a notebook for each of these steps:</p>
-<ul>
-<li><a href="https://drive.google.com/a/berkeley.edu/file/d/0B5rZViyRAaZqOFRoc1YwOTQydms/edit?usp=sharing">NB1_data_gathering.ipynb</a></li>
-<li><a href="https://drive.google.com/a/berkeley.edu/file/d/0B5rZViyRAaZqVC0wVlc5SWlKZU0/edit?usp=sharing">NB2_data_cleaning.ipynb</a></li>
+<li><a href="http://prezi.com/fhumwa8tb3fs/the-landscape-of-data-analysis/">The landscape of data analysis</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/55">Types of Data Analysis Questions</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/57">Sources of Data Sets</a></li>
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Data-gathering">Data gathering<a class="anchor-link" href="#Data-gathering">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>various data sources</strong> (XML, jason, HTML, etc.) <span class="math">\(\longrightarrow\)</span> <strong>raw data tables</strong> (csv, xls, etc.)</p>
+<blockquote>
+<p><strong>Data Analysis</strong> is a <strong>collection of methods</strong> allowing us to <strong>answer questions</strong> or <strong>solve problems</strong> in any given field from <strong>data</strong> relevant to the questions or problems.</p>
+</blockquote>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This involves</p>
+<p>The <strong>fields</strong> concerned by the questions/problems at hand may be <strong>very varied</strong>:</p>
 <ul>
-<li><p><strong>storing the raw data</strong> into the local file system</p></li>
-<li><p><strong>loading the raw data into R</strong> (or Python) using <strong>library</strong> (or <strong>modules</strong>) corresponding to the raw data format</p></li>
-<li><p><strong>creating data frames</strong> containing the raw data</p></li>
-<li><p><strong>saving the data in tabular format</strong> (as csv, xls, etc.)</p></li>
+<li>biology</li>
+<li>physics</li>
+<li>chemistry</li>
+<li>medecine</li>
+<li>computing</li>
+<li>economy</li>
+<li>sociology</li>
+<li>politics</li>
+<li>buisness</li>
+<li>law</li>
+<li>urbanism</li>
+<li>etc. (and even nowdays, mathematics!)</li>
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="r-packages-for-data-gathering">R packages for data gathering</h4>
-<p>You'll find <a href="http://cran.r-project.org/web/packages/available_packages_by_name.html">here</a> a list of all availabe R packages.</p>
-<p>To install the R package (if not already installed), you'll invoke the command:</p>
-<pre><code>install.packages(&#39;package_name&#39;)</code></pre>
-<p>To use the package after installation, you'll inkove the command:</p>
-<pre><code>library(&#39;package_name&#39;)</code></pre>
+<p>A <strong>first step</strong> in data analyis is to <strong>identify the right data set</strong> that may <strong>contain the solution</strong> to our question/problem.</p>
+<p>For that, one needs</p>
 <ul>
-<li><a href="http://cran.r-project.org/web/packages/XML/index.html">Package 'XML'</a> for <strong>HTML</strong> and <strong>XML</strong> format processing</li>
-<li><a href="http://cran.r-project.org/web/packages/scrapeR/index.html">Package 'scrapeR'</a> for webscraping (HTML and XML processing)</li>
-<li><a href="http://cran.r-project.org/web/packages/RJSONIO/index.html">Package 'RJSONIO'</a> for <strong>JSON</strong> format processing</li>
-<li><a href="http://cran.r-project.org/web/packages/xlsx/index.html">Package 'xlsx'</a> for <strong>xls</strong> (Excel spreadsheets) format processing</li>
-<li><a href="http://cran.r-project.org/web/packages/httpRequest/index.html">Package 'httpRequest'</a> for requesting HTML pages from websites</li>
-<li><a href="http://cran.r-project.org/web/packages/RWeather/index.html">Packate 'RWeather'</a> offers very convenient ways to retrieve weather data from various sources</li>
+<li><p>an <strong>understanding of the field</strong> that the question address (<strong>field expertise</strong>), so that we can gather <strong>relevant</strong> data,</p></li>
+<li><p>an <strong>understanding of the type of data</strong> our question/problem requires.</p></li>
+</ul>
+<p>Statistics gives an abstract framework to identify the <strong>type of data</strong> or <strong>form of the data</strong> required by the question/problem. Field expertise and intuition is very important though, since, even though the type of data may be the right one to feed the type of analysis required by our problem, the actual data <em>content</em> may not be relevant, or may lack important variables relevant to the problem.</p>
+<p>Field expertise (or sometimes good judgement) may help you identify the relevant <strong>population</strong> to study and the <strong>relevant variables</strong> to consider, as well as the <strong>relevant time-scale</strong> for the observations, as we will see below.</p>
+<p>In the next section, we will give concrete examples and more details on what is meant by <strong>type of data</strong>.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Data Analysis:</strong> Question/Problem <span class="math">\(\longrightarrow\)</span> type of data needed</p>
+<p><strong>Field expertise:</strong> type of data needed <span class="math">\(\longrightarrow\)</span> right data set for the problem</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong>second</strong> step is to <strong>infer</strong> from <strong>the question/problem</strong> and from the <strong>relevant data set</strong> which <strong>type of data analysis</strong> needs to be performed to solve the problem.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Only when</p>
+<ul>
+<li><p>the <strong>question/problem</strong> has been defined</p></li>
+<li><p>the <strong>ideal data set</strong> has been determined</p></li>
+<li><p>the <strong>right data analysis method</strong> has been specified</p></li>
+</ul>
+<p>the concrete data analyis process can began.</p>
+<p><strong>Identifying this three components (question/problem, ideal data set, right analysis type) will be the bulk of your class project prospectus.</strong></p>
+<p><strong>Remark:</strong> Even if the question/data set/data analysis first considered may evolve some upon <strong>exploration</strong> of the <strong>actual gathered data</strong>, you should have a clear understanding of these three points, before starting the analysis.</p>
+<p>Randomly taking a data set and analysing it without concrete purpose or angle provided by a thought out question is a recipe for disaster.</p>
+<p>The <strong>prospectus</strong> is there to gard you from this danger.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The actual <strong>data anlysis process</strong> goes as follows:</p>
+<ul>
+<li><p><strong>data gathering:</strong> Collect <strong>raw data</strong> from various source data sources containing the information necessary to build your ideal data set (or the best approximation you can)</p></li>
+<li><p><strong>data exploration:</strong> Look at all the data collected, check for <strong>value integrity</strong>, look for <strong>defective/aberant values</strong>, isolate the good data, and disgard the rest</p></li>
+<li><p><strong>data cleaning:</strong> From the <strong>raw data</strong> collected build the <strong>clean data set</strong> (as close as possible to the ideal one) on which you'll perform data anlysis</p></li>
+<li><p><strong>data analysis:</strong> Apply the right data analyisis on your clean data set to answer your question, or solve your problem</p></li>
+<li><p><strong>result delivery:</strong> From you analysis create a <strong>data visualization</strong> that answers your question if possible, or write up <strong>an algorithm</strong> that solves your problem.</p></li>
+<li><p><strong>data report delivery</strong>: Write a report restating clearly your question/problem, giving you data sources and analysis methods, and comments on the accuracy of your results.</p></li>
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="python-packages-for-data-gathering">Python packages for data gathering</h4>
-<p>You'll find <a href="https://pypi.python.org/pypi">here</a> a list of all availabe Python packages (or modules).</p>
-<p>To install a Python package the best way is througth the <strong>Canopy package installer</strong>. Another simple way is to use the command:</p>
-<pre><code>easy_install &#39;package_name&#39;</code></pre>
-<p>To use the package after installation, you'll inkove the command:</p>
-<pre><code>import package_name</code></pre>
+<p>In the rest of this lecture, we learn how to recognize</p>
 <ul>
-<li><a href="http://lxml.de">module lxml</a> for <strong>HTML</strong> and <strong>XML</strong> scraping</li>
-<li><a href="http://docs.python.org/2/library/json.html">module json</a> for <strong>JSON</strong> format processing</li>
-<li><a href="http://pandas.pydata.org/pandas-docs/dev/io.html">module pandas</a> can read directly a variety of format directly into data frames (jason, excel, etc.).</li>
-<li><a href="docs.python-requests.org">module request</a> for requesting HTML pages from websites</li>
-<li><a href="http://pandas.pydata.org/pandas-docs/dev/remote_data.html">module pandas.io.data</a> offers very convenient ways to obtain data from the internet (mostly financial)</li>
+<li>the <strong>ideal data set</strong></li>
+<li>the <strong>right analysis type</strong></li>
+</ul>
+<p>to answer your question, or solve your problem.</p>
+<p><strong>Doing so will also be your main goal, while writing your class project prospectus.</strong></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the coming lectures, we will discuss in details every steps of the actual data analysis process, using R. For now, here are some videos concerning the other steps of the data anlysis process, if you can not wait:</p>
+<h4 id="gathering-data">Gathering Data:</h4>
+<ul>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/73">Getting Data (Part 1)</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/75">Getting Data (Part 2)</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/77">Data Ressources</a></li>
+</ul>
+<h4 id="exploring-data">Exploring Data:</h4>
+<ul>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/79">Summarizing Data</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/85">Exploratory Graphs (Part 1)</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/87">Exploratory Graphs (Part 2)</a></li>
+</ul>
+<h4 id="cleaning-data">Cleaning Data:</h4>
+<ul>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/81">Data Munging Basics</a></li>
+</ul>
+<h4 id="analysing-data">Analysing Data:</h4>
+<ul>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/91">Hierachical Clustering</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/93">K-Mean Clustering</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/95">Dimension Reduction</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/97">Clustering Example</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/99">Basic Least Squares</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/101">Inference Basics</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/105">P-values</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/107">Regression with Factor Variables</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/103">Multiple Variable Regression</a></li>
+<li><a href="https://class.coursera.org/dataanalysis-002/lecture/109">Regression in the Real World</a></li>
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Data-cleaning">Data cleaning<a class="anchor-link" href="#Data-cleaning">&#182;</a></h2>
+<h2 id="The-3-dimensions-of-Data:-Population,-Variables,-and-Time">The 3 dimensions of Data: Population, Variables, and Time<a class="anchor-link" href="#The-3-dimensions-of-Data:-Population,-Variables,-and-Time">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>raw data tables</strong> <span class="math">\(\longrightarrow\)</span> <strong>clean data tables ready for analysis</strong></p>
+<h3 id="The-population-and-the-variable-dimensions">The population and the variable dimensions<a class="anchor-link" href="#The-population-and-the-variable-dimensions">&#182;</a></h3>
 </div>
+
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This involves</p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
+<p>So far, we saw that <strong>statistical analysis</strong> is based on <strong>two main objects</strong>:</p>
 <ul>
-<li><strong>removing duplicate observations (rows)</strong></li>
+<li><p>A set <span class="math">\(\Omega\)</span> representing the <strong>population</strong> under study</p></li>
+<li><p>A subset <span class="math">\(F\)</span> of functions on <span class="math">\(\Omega\)</span> representing the <strong>population characteristics</strong> we are interested in.</p></li>
+</ul>
+<p>Depending on the field both <span class="math">\(O\)</span> and <span class="math">\(F\)</span> have different names:</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example:</strong> A class professor can decide to perform a data anlysis on its class students. In this case, the population under study <span class="math">\(\Omega\)</span> will most probably be the set of all the students in the class. Depending on the questions the professor is asking himself about his class, different <strong>characteristics</strong> or <strong>variables</strong> may be considered.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Try to find out for yourself, what variables may be relevant in order to answer the following questions:</p>
+<ul>
+<li><p>Are the quality of the different discussion sections affecting my student performances?</p></li>
+<li><p>Can the poor exam performance of certain of my student be attributed to a common weak background?</p></li>
+<li><p>Can I predict the final score of a given student if I know its total homework score and its midterm score?</p></li>
+<li><p>Can I identify the students that have cheated at the midterm, if any?</p></li>
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, what if the professor decides to investigate the following question:</p>
 <ul>
-<li><strong>selecting/producing only relevant variables (columns)</strong>
-<ul>
-<li>by eliminating redundant or irrelevant variables</li>
-<li>by creating new variables better suited for analysis (indicators, dummy variables)</li>
-</ul></li>
+<li>Can I identify which of my students have been improving in the class, and which have been regressing?</li>
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-temporal-dimension-in-data-analysis">The temporal dimension in data analysis<a class="anchor-link" href="#The-temporal-dimension-in-data-analysis">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is a <strong>third aspect</strong> that we didn't talk about so far: <strong>TIME</strong></p>
+<p>Namely, all <strong>processeses take place in time</strong>:</p>
 <ul>
-<li><strong>keeping only clean variable values</strong>
+<li><p>populations <strong>evolves</strong> in time (for instance: individual can die, be born, etc.)</p></li>
+<li><p>their <strong>characteristics vary</strong> in time</p></li>
+</ul>
+<p><strong>Example:</strong></p>
 <ul>
-<li>by removing rows and columns with too many <strong>missing values</strong> (NA)</li>
-<li>by making sure that the <strong>variable values are of the right type</strong> (dates, prices, etc.)</li>
-<li>by detecting and <strong>removing errors</strong> and <strong>aberrant values</strong></li>
-<li>by making sure that <strong>one category correspond to only one value</strong> for categorical variable</li>
-<li>by possibly <strong>rescaling quantitative variable values</strong></li>
-</ul></li>
+<li><p>The <strong>price of a given stock</strong> at the stock exchange varies in time.</p></li>
+<li><p>The <strong>temperature at a given spot</strong> on earth varies in time.</p></li>
+<li><p>The score of a given student at the <strong>weekly</strong> quizzes and homework assignments varies from week to week.</p></li>
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The end goal is to prepare</p>
+<p>We will forget here that the set <span class="math">\(\Omega\)</span> itself can change over time.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Time</strong> gives a <strong>third dimension</strong> to data analysis (corresdonding to the notion of <code>axis</code> in Pandas).</p>
+<pre><code>dimension 1 = population individuals (data frame rows)
+dimension 2 = population variables (data frame columns)
+dimension 3 = observation times (third dimension!)</code></pre>
+<p>To encode time in our analysis, we can think of the <strong>population variables as depending on time</strong>:</p>
+<p><span class="math">\[X:O\times \mathbb{R} \longrightarrow A,\quad (\omega,\,t)\longrightarrow X_t(\omega)\in A,\]</span></p>
+<p>where <span class="math">\(A\)</span> is the set of possible values of the variable <span class="math">\(X\)</span>, and where</p>
+<p><span class="math">\(X_t(\omega)\)</span> is the <strong>value</strong> of the <strong>variable</strong> <span class="math">\(X\)</span> for <strong>individual</strong> <span class="math">\(\omega\)</span> <strong>observed at time</strong> <span class="math">\(t\)</span>.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example:</strong> Consider again the professor question that we saw above:</p>
 <ul>
-<li>the <strong>right set of data tables</strong></li>
-<li>with <strong>only clean values</strong></li>
-<li>with <strong>only relevant variables</strong></li>
+<li>Can I identify which of my students have improved in class, and which have regressed?</li>
 </ul>
-<p>ready for analysis.</p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example-1:-Cleaning-variable-types">Example 1: Cleaning variable types<a class="anchor-link" href="#Example-1:-Cleaning-variable-types">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider the following data on the most popular movies of all times:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[2]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://www.stat.berkeley.edu/classes/s133/data/movies.txt&#39;</span>
-<span class="o">!</span>curl <span class="nv">$url</span> 2&gt;/dev/null | head -4
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_stream output_stdout">
-<pre>
-rank|name|box|date
-1|Avatar|$759.563|December 18, 2009
-2|Titanic|$600.788|December 19, 1997
-3|The Dark Knight|$533.184|July 18, 2008
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The data <strong>tabular</strong> with separator '|', we can directly load it into a data frame without any preprocessing:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[3]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span> <span class="o">-</span><span class="n">i</span> <span class="n">url</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">delim</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;|&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">T</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-  rank                               name      box              date
-1    1                             Avatar $759.563 December 18, 2009
-2    2                            Titanic $600.788 December 19, 1997
-3    3                    The Dark Knight $533.184     July 18, 2008
-4    4 Star Wars: Episode IV - A New Hope $460.998      May 25, 1977
-5    5                            Shrek 2 $437.212      May 19, 2004
-6    6         E.T. the Extra-Terrestrial $434.975     June 11, 1982
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Looking at the box and date variables, we see a potential mismatch in types:</p>
+<p>So here the <strong>right population</strong> to consider is again the population <span class="math">\(\Omega\)</span> of all the class students.</p>
+<p>The <strong>relevant variables</strong> that may help us answer this question must somehow depend on time. Here are two:</p>
 <ul>
-<li><p>the <strong>dollar sign</strong> in the box column seems to indicate that the box column is represented by a <strong>character vector</strong> instead of a <strong>numeric vector</strong></p></li>
-<li><p>the date column may also be represented by a <strong>character vector</strong> instead of a vector containing <strong>date objects</strong></p></li>
+<li><p>The <strong>weekly</strong> quiz scores <span class="math">\(Q\)</span></p></li>
+<li><p>The <strong>weekly</strong> homework scores <span class="math">\(H\)</span></p></li>
+</ul>
+<p>Both of these variables have a value depending on which week we are observing the quiz or homework score.</p>
+<p>We have 12 weeks in a semester, which gives us a kind of discrete time:</p>
+<p><span class="math">\(T =\{1,2,3, \dots, 12\},\)</span></p>
+<p>where the number <span class="math">\(i\)</span> denotes the <span class="math">\(i^{th}\)</span> week of instruction.</p>
+<p>So both variables take a time <span class="math">\(t\in T\)</span> and student <span class="math">\(\textrm{Bob}\in\Omega\)</span> and yield back two values:</p>
+<p><span class="math">\[Q_t(\textrm{Bob})\qquad \textrm{and}\qquad H_t(\textrm{Bob})\]</span></p>
+<p>which are respectively, the score of Bob at the quiz and homework assignment of week <span class="math">\(t\)</span>.</p>
+<p>Answering the professor question will thus involve a kind of temporal analysis of this two variables for example.</p>
+<p>We will come back to that late. For now, just keep in mind that <strong>your question or problem may involve a temporal aspect</strong>, whose analysis will necessite particular methods. You need to be aware of that and to be able to recognize any temporal aspect in your clas project question or problem. This will determine the type of data you'll need to gather and the type of analysis you'll need to perform on it.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Determining-the-ideal-data-set-for-your-problem">Determining the ideal data set for your problem<a class="anchor-link" href="#Determining-the-ideal-data-set-for-your-problem">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Suppose you have a certain question you'll wish to answer using data anlysis techniques;.</p>
+<p>Your <strong>first order of business</strong> is to <strong>identify the tree dimensions that your problems involves</strong>.</p>
+<p>You'll need to dertermine:</p>
+<ul>
+<li><p>What is the <strong>population</strong> <span class="math">\(\Omega\)</span> relevant to the problem?</p></li>
+<li><p>What are the <strong>population variables</strong> <span class="math">\(\{X_1,\dots, X_n\}\)</span> relevant to the problem?</p></li>
+<li><p>What is the <strong>time frame</strong> <span class="math">\(T\subset \mathbb{R}\)</span> relevant to your problem?</p></li>
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let us check the variable types of this data frame.</p>
-<p>A <strong>data frame</strong> is a <strong>class</strong>. Since <strong>classes in R are just enhanced lists</strong> (containing the vectors representing our variables, or columns), we can use the <strong>list apply</strong> function on our data frame <code>df</code> in the following way:</p>
-<pre><code>lapply(df, class)</code></pre>
-<p>which will return a list containing the classes of our data frame columns.</p>
-<p>For a better ouput, we will futher construct a data frame out of the return value of <code>lapply</code>:</p>
+<p><strong>Example:</strong> Suppose you are environemental scientist, and you'd like to settle the question about the earth global temperature increasing. As rough simplification, you may take your population <span class="math">\(\Omega\)</span> to be all the points at the surface of the earth: i.e. all the points <span class="math">\((\theta, \gamma)\)</span> describing a location on the earth by giving a longitude <span class="math">\(\theta\)</span> and latitude <span class="math">\(\gamma\)</span>. The variable of interest here is the temperature <span class="math">\(T_t(\theta, \gamma)\)</span> at a given location <span class="math">\((\theta, \gamma)\)</span> at a given time <span class="math">\(t\)</span>.</p>
+<p>A field expert may advice us to enlarge our population by considering all the points not only on the surface of the earth, but also those in a small layer of the earth atmosphere. This expert for good reason, but unknown to us, may also suggest other variables to take into consideration. This is exactly at this point of the data analysis that field expertise is crucial.</p>
+<p>Another aspect that we must consider here is the <strong>time-frame</strong> relevant to our problem: Are we considering a period of 10 years, 50 year, 500 years, 500000 years? Again, the field expert will tell us, but we need to be aware that this issue must be addressed.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Digression:-The-factor-class">Digression: The <code>factor</code> class<a class="anchor-link" href="#Digression:-The-factor-class">&#182;</a></h3>
-</div>
-
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[4]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">modes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">class</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">modes</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-     rank   name    box   date
-1 integer factor factor factor
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We see here the <a href="http://www.stat.berkeley.edu/classes/s133/factors.html">new class factor</a>, which is used by R to store <strong>categorical variables</strong> in the same way that Pandas used the <strong>Categorical</strong> class for the same purpose.</p>
-<p>Factors are constructed out of regular vectors using the <strong>class constructor</strong>:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[5]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">sex</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="s">&#39;M&#39;</span><span class="p">,</span><span class="s">&#39;F&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>A <code>factor</code> object stores</p>
+<p><strong>Remark:</strong> Your problem may or may not involve all of the three dimensions, but you need to be very clear about what dimensions are involved at the beginning of your project. Problems involving <strong>all the 3 dimensions</strong> will be most probably be <strong>much more challenging</strong> than those, where only one or two dimensions are relevant.</p>
+<p>This increased complexity has two reasons:</p>
 <ul>
-<li><p>the <strong>category values</strong> as <strong>vector of integers</strong></p></li>
-<li><p>the <strong>category names</strong> as a <strong>character vector</strong> accessible though the function</p>
-<p>levels(x)</p></li>
+<li><p><strong>Practical reason</strong>: it's harder (if not impossible in certain cases) to collect data along all the three axes</p></li>
+<li><p><strong>Theoretical reason</strong>: you may need to <strong>perform data analysis for each of the axis</strong>: a <strong>population analysis</strong>, a <strong>variable analysis</strong>, and a <strong>temporal analysis</strong>.</p></li>
 </ul>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[6]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">levels</span><span class="p">(</span><span class="n">sex</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-[1] &quot;F&quot; &quot;M&quot;
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
+<p>So in your <strong>class project</strong>, it is strongly encouraged that you <strong>avoid questions involving all the three dimensions of Data!</strong> It won't be managable.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>print</code> function displays the <strong>category values as strings</strong>.</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[7]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-[1] M F F F M
-Levels: F M
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>cat</code> function displays the <strong>category values as integers</strong>.</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[8]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">cat</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-2 1 1 1 2
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By default, the family of read functions <strong>interprets character columns as factors</strong>.</p>
-<p>To prevent that, one needs to set the argument <code>stringsAsFactors</code> to <code>FALSE</code>:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[9]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">df</span>    <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">delim</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;|&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">stringsAsFactors</span><span class="o">=</span><span class="n">F</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-  rank                               name      box              date
-1    1                             Avatar $759.563 December 18, 2009
-2    2                            Titanic $600.788 December 19, 1997
-3    3                    The Dark Knight $533.184     July 18, 2008
-4    4 Star Wars: Episode IV - A New Hope $460.998      May 25, 1977
-5    5                            Shrek 2 $437.212      May 19, 2004
-6    6         E.T. the Extra-Terrestrial $434.975     June 11, 1982
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now, character columns are interpreted as character vectors, but the types of the &quot;box&quot; column and the &quot;date&quot; column are still wrong:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[10]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">modes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">class</span><span class="p">))</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">modes</span><span class="p">);</span> <span class="n">cat</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">);</span> <span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-     rank      name       box      date
-1 integer character character character
-
-
-  rank                               name      box              date
-1    1                             Avatar $759.563 December 18, 2009
-2    2                            Titanic $600.788 December 19, 1997
-3    3                    The Dark Knight $533.184     July 18, 2008
-4    4 Star Wars: Episode IV - A New Hope $460.998      May 25, 1977
-5    5                            Shrek 2 $437.212      May 19, 2004
-6    6         E.T. the Extra-Terrestrial $434.975     June 11, 1982
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Digression:-The-date-class">Digression: The <code>date</code> class<a class="anchor-link" href="#Digression:-The-date-class">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>R has <a href="http://www.stat.berkeley.edu/classes/s133/R-5a.html">date class</a> used to represent <strong>temporal data</strong>.</p>
-<p>One can create a date out of a <em>date string</em> in using the function:</p>
-<pre><code>as.Date(date_string, pattern)</code></pre>
-<p>where <code>pattern</code> is a string indicating how the date in <code>date_string</code> is formatted using the <em>date place holders</em>:</p>
-<pre><code>%d (day)
-%m (month in decimal)
-%B (month in letter)
-%b (in abreviated)
-%y (year: two digits)
-%Y (year: four digits)</code></pre>
-<p>This function returns a <code>Date</code> object, on which we can perform numerical operations:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[11]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">a</span> <span class="o">=</span> <span class="k">as</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="s">&#39;December 18, 2009&#39;</span><span class="p">,</span> <span class="s">&#39;%B </span><span class="si">%d</span><span class="s">, %Y&#39;</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="k">as</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="s">&#39;January 29, 2013&#39;</span><span class="p">,</span> <span class="s">&#39;%B </span><span class="si">%d</span><span class="s">, %Y&#39;</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-Time difference of 1138 days
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now correct the type in our date column:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[12]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">df</span><span class="err">$</span><span class="n">date</span> <span class="o">=</span> <span class="k">as</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">df</span><span class="err">$</span><span class="n">date</span><span class="p">,</span> <span class="s">&#39;%B </span><span class="si">%d</span><span class="s">, %Y&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-  rank                               name      box       date
-1    1                             Avatar $759.563 2009-12-18
-2    2                            Titanic $600.788 1997-12-19
-3    3                    The Dark Knight $533.184 2008-07-18
-4    4 Star Wars: Episode IV - A New Hope $460.998 1977-05-25
-5    5                            Shrek 2 $437.212 2004-05-19
-6    6         E.T. the Extra-Terrestrial $434.975 1982-06-11
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Digression:-Pattern-maching-and-replacement">Digression: Pattern maching and replacement<a class="anchor-link" href="#Digression:-Pattern-maching-and-replacement">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We still need to correct our &quot;box&quot; collum, since it contains character strings of the type:</p>
-<pre><code>$759.563</code></pre>
-<p>and we would like actual numerical values instead.</p>
-<p>Unfortunately, we can not use the <strong>conversion function</strong></p>
-<pre><code>as.numeric(x)</code></pre>
-<p>directly because of the presence of the dollar sign.</p>
-<p>The return value would be in this case a vector of <strong>NA values</strong> (mising values).</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[13]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">df</span><span class="err">$</span><span class="n">box</span><span class="p">)))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-[1] NA NA NA NA NA NA
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>R provides a <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/grep.html">collection of function</a> to find and replace <strong>regular expressions</strong> in character vectors.</p>
-<p>Here we only need to use the function</p>
-<pre><code>sub(pattern, replacement, x)</code></pre>
-<p>where</p>
+<p><strong>In practice</strong>, we don't have access to the whole population, nor the whole time-frame, and even maybe not all the values for our ideal set of variables. We will need to content ourself probably only with</p>
 <ul>
-<li><code>pattern</code> is regular expression to macht and replace</li>
-<li><code>replacement</code> is the replacement regular expression</li>
+<li><p>a <strong>finite sample</strong> <span class="math">\(S =\{s_1,\dots, s_m\} \subset \Omega\)</span> of our ideal population (even if <span class="math">\(m\)</span> can be very large)</p></li>
+<li><p>a <strong>finite choice of variables</strong> <span class="math">\(F = \{X_1,\dots,X_n\}\)</span> of our ideal variable collection (which may be infinite...)</p></li>
+<li><p>a <strong>finite number of observation times</strong> <span class="math">\(I = \{t_1,\dots, t_k\}\)</span></p></li>
 </ul>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>R uses the set of <strong>extended regular expressions</strong>. They are the same as we already studied in Unix:</p>
-<p><strong>Groups:</strong></p>
-<pre><code> ( ) delimits a group of characters
- |   means &quot;either the group or character on the left or on the rigth of |&quot;
- </code></pre>
-<p><strong>Ranges:</strong></p>
-<pre><code>   .    means &quot;any character&quot;
- [...]  means &quot;any character enclosed between the brackets&quot;
- [^...] means &quot;any character not enclosed between the brackets&quot;
- 
- </code></pre>
-<p><strong>Modifiers:</strong></p>
-<pre><code> *      means &quot;the previous character or group occurs zero or many times&quot;
- +      means &quot;the previous character or group occurs one or many times&quot;
- ?      means &quot;the previous character or group occurs zero or one time&quot;
- {n,m}  means &quot;the previous character or group occurs between n or m times&quot;
- {n}    means &quot;the previous character or group occurs exactly n times&quot;
- \      escape special characters</code></pre>
-<p><strong>Positions:</strong></p>
-<pre><code> ^ means &quot;at the beginning of the line&quot;
- $ means &quot;at the end of the line&quot;</code></pre>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In our example, we need to remove the dollar sign from the box column.</p>
-<p>Since the dollar sign has a special meaning as a regular expression, we will have to escape it:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[14]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">pattern</span>     <span class="o">=</span> <span class="s">&#39;\$&#39;</span>
-
-<span class="n">replacement</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
-
-<span class="n">box_values</span> <span class="o">=</span> <span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">df</span><span class="err">$</span><span class="n">box</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">tail</span><span class="p">(</span><span class="n">box_values</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-[1] &quot; 57.114&quot; &quot; 57.059&quot; &quot; 57.042&quot; &quot; 52.823&quot; &quot; 56.615&quot; &quot; 52.581&quot;
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now that the values has been stripped from the dollar sign, we can convert them into numbers, and replace the &quot;box&quot; column in our data frame:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[15]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">df</span><span class="err">$</span><span class="n">box</span> <span class="o">=</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">box_values</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">tail</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-     rank                     name    box       date
-995   995                Beethoven 57.114 1992-04-03
-996   996                    Annie 57.059 1982-05-21
-997   997                  Beaches 57.042 1988-12-21
-998   998      Message in a Bottle 52.823 1999-02-12
-999   999 Resident Evil: Afterlife 56.615 2010-09-10
-1000 1000    Kicking and Screaming 52.581 2005-05-13
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we can save our data into a cleaned csv file for further use.</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[16]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">write</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nb">file</span><span class="o">=</span><span class="s">&#39;movies_cleaned.table&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;|&#39;</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">names</span><span class="o">=</span><span class="n">F</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[17]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">movies</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">delim</span><span class="p">(</span><span class="s">&#39;movies_cleaned.table&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;|&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">stringsAsFactors</span><span class="o">=</span><span class="n">F</span><span class="p">)</span>
-
-<span class="n">movies</span><span class="err">$</span><span class="n">date</span> <span class="o">=</span> <span class="k">as</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">date</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">movies</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-  rank                               name     box       date
-1    1                             Avatar 759.563 2009-12-18
-2    2                            Titanic 600.788 1997-12-19
-3    3                    The Dark Knight 533.184 2008-07-18
-4    4 Star Wars: Episode IV - A New Hope 460.998 1977-05-25
-5    5                            Shrek 2 437.212 2004-05-19
-6    6         E.T. the Extra-Terrestrial 434.975 1982-06-11
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[18]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">movies</span><span class="p">,</span> <span class="n">class</span><span class="p">))))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-     rank      name     box date
-1 integer character numeric Date
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Digression:-Quantitative-variable-check">Digression: Quantitative variable check<a class="anchor-link" href="#Digression:-Quantitative-variable-check">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>One way to check if the values of a categorical variable are okay is to compute the statistic summary and look for aberrant means, medians, etc.</p>
-<p>Let's do that with the &quot;box&quot; variable:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[19]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">summary</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">box</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  52.58   70.28   93.60  117.50  134.60  759.60 
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This seems okay, but still, we'd like to see how many movies are close to the max and min values.</p>
-<p>Some erroneous outlier values may have crept in, and we may see that by plotting</p>
+<p>The <strong>collection of values</strong> corresponding to</p>
 <ul>
-<li>a <strong>boxplot</strong></li>
-<li>a <strong>histogram</strong></li>
+<li><p>the <strong>best possible finite sample <span class="math">\(S\)</span></strong></p></li>
+<li><p>the <strong>best possible finite variable collection <span class="math">\(F\)</span></strong></p></li>
+<li><p>the <strong>best possible finite observation times <span class="math">\(I\)</span></strong></p></li>
 </ul>
-<p>of the variable values to spot outliers visualy.</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[20]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">boxplot</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">box</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Movie box office summary&quot;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<img src="data:image/png;base64,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
-">
-
-</div>
-</div>
-
-</div>
-</div>
-
+<p>is our <strong>IDEAL DATA SET</strong>.</p>
+<p>Observe that the <strong>ideal data set comes geometrically in the form of cube</strong> with one axis for the population, one axis for the variables, and one axis for the times.</p>
+<p>We will call it the <strong>IDEAL DATA CUBE</strong> <strong>associated to our initial question</strong>.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It seems that there are quite a bunch of outliers. We may try to check the values by</p>
+<p>As already noted, a lot of problems do not involve <strong>the three data dimensions</strong>.</p>
+<p>Depending on the initial question, the <strong>ideal data set</strong> may only correspond to <strong>slices of the full data cube</strong>.</p>
+<p>For instance, the relevant data to solve the intial problem may be</p>
 <ul>
-<li>retrieving the movie names</li>
-<li>comparing their high success with our expectations</li>
+<li><p>a <strong>time series</strong>: one idividual and one variable observed at different times (ex: single stock prices)</p></li>
+<li><p>a <strong>time frame</strong>: several individual and one variable at different times (ex: portfolio prices)</p></li>
+<li><p>a <strong>data frame</strong>: several individual and several variables constant in time</p></li>
+</ul>
+<p>On the other hand, <strong>only a certain subsets or slices of the ideal data cube may also be available to you</strong>...</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Determining-the-right-type-of-analysis-for-your-problem">Determining the right type of analysis for your problem<a class="anchor-link" href="#Determining-the-right-type-of-analysis-for-your-problem">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A <strong>data cube</strong> can be analysed in essentially 3 ways, corresponding to the 3 axis:</p>
+<ul>
+<li><p><strong>Variable Analysis:</strong> i.e., analysis by <strong>columns</strong></p></li>
+<li><p><strong>Population Analysis:</strong> i.e., analysis by <strong>rows</strong></p></li>
+<li><p><strong>Temporal Analysis:</strong> i.e., analysis along the <strong>time axis</strong></p></li>
 </ul>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[21]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">limit</span> <span class="o">=</span> <span class="mi">400</span>
-
-<span class="n">outliers</span> <span class="o">=</span> <span class="n">movies</span><span class="p">[</span><span class="n">movies</span><span class="err">$</span><span class="n">box</span> <span class="o">&gt;</span> <span class="n">limit</span><span class="p">,]</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">dim</span><span class="p">(</span><span class="n">outliers</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">outliers</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-[1] 11  4
-   rank                                       name     box       date
-1     1                                     Avatar 759.563 2009-12-18
-2     2                                    Titanic 600.788 1997-12-19
-3     3                            The Dark Knight 533.184 2008-07-18
-4     4         Star Wars: Episode IV - A New Hope 460.998 1977-05-25
-5     5                                    Shrek 2 437.212 2004-05-19
-6     6                 E.T. the Extra-Terrestrial 434.975 1982-06-11
-7     7  Star Wars: Episode I - The Phantom Menace 431.088 1999-05-19
-8     8 Pirates of the Caribbean: Dead Man&apos;s Chest 423.416 2006-07-07
-9     9                                Toy Story 3 414.638 2010-06-18
-10   10                                 Spider-Man 407.681 2002-05-03
-11   11        Transformers: Revenge of the Fallen 402.077 2009-06-24
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once the</p>
+<ul>
+<li><p>the <strong>problem</strong> has been chosen,</p></li>
+<li><p>the <strong>ideal data cube</strong> identified,</p></li>
+</ul>
+<p>it is necessary to identifiy the <strong>right type of analysis</strong> to solve your problem. (The form in which you want your solution, will also prescribe certain sub-types of analysis.)</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also plot an histogram of the variable:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[22]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">hist</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">box</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&#39;Box office histogram&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<img src="data:image/png;base64,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
-WvMAAAAASUVORK5CYII=
-">
-
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The situation seems to correspond to what we expect: A lot of movies in the same range, and a few with enormous box office.</p>
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Adding-variables">Adding variables<a class="anchor-link" href="#Adding-variables">&#182;</a></h3>
+<h2 id="Variable-analysis">Variable analysis<a class="anchor-link" href="#Variable-analysis">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since we have a temporal information, we maybe interested in patterns in the time variable.</p>
-<p>We may want to add a variable for our analysis, for instance the day of the week that a movie was released. The function</p>
-<pre><code>weekdays(date)
-months(date)</code></pre>
-<p>will return the corresponding day of the week for a data.</p>
-<p>Let's use is to create another variable and add it as a factor:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[23]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">days</span> <span class="o">=</span> <span class="n">c</span><span class="p">(</span><span class="s">&#39;Monday&#39;</span><span class="p">,</span> <span class="s">&#39;Tuesday&#39;</span><span class="p">,</span> <span class="s">&#39;Wednesday&#39;</span><span class="p">,</span> <span class="s">&#39;Thursday&#39;</span><span class="p">,</span> <span class="s">&#39;Friday&#39;</span><span class="p">,</span> <span class="s">&#39;Saturday&#39;</span><span class="p">,</span> <span class="s">&#39;Sunday&#39;</span><span class="p">)</span>
-
-<span class="n">movies</span><span class="err">$</span><span class="n">weekday</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">weekdays</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">date</span><span class="p">),</span> <span class="n">levels</span><span class="o">=</span><span class="n">days</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">tail</span><span class="p">(</span><span class="n">movies</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-     rank                     name    box       date   weekday
-995   995                Beethoven 57.114 1992-04-03    Friday
-996   996                    Annie 57.059 1982-05-21    Friday
-997   997                  Beaches 57.042 1988-12-21 Wednesday
-998   998      Message in a Bottle 52.823 1999-02-12    Friday
-999   999 Resident Evil: Afterlife 56.615 2010-09-10    Friday
-1000 1000    Kicking and Screaming 52.581 2005-05-13    Friday
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
+<blockquote>
+<p>The main problems that <strong>Variable analysis</strong> addresses may be split into the following three:</p>
+<ul>
+<li><p><strong>describing</strong> the <strong>repartition of values</strong> among the population</p></li>
+<li><p><strong>groupping</strong> the variables that have a <strong>(co)dependence relationship </strong></p></li>
+<li><p><strong>predicting</strong> the value of a <strong>target variable</strong> from the values of the other variables</p></li>
+</ul>
+</blockquote>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now compute a frequency table for this new categorical variable, and diplay it as a barplot:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[24]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">release_days</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">weekday</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">release_days</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-
-   Monday   Tuesday Wednesday  Thursday    Friday  Saturday    Sunday 
-       10        22       161        39       750         7        11 
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
+<p>Variable analysis is a <strong>column analysis</strong>.</p>
+<p>These are the three main type of variable analysis <em>we will need for this class</em>.</p>
+<p><strong>Remark:</strong> Be aware that there are <strong>other types of variable analysis</strong>. Two other very important types, <strong>factor analysis</strong> and <strong>principal component analysis</strong>, aim at <strong>reducing</strong> the number of variables <strong>while retaining most of the information</strong>; In a sense, these two anlaysis attempt at finding a smaller set of other variables on which our larger set of initial variables depends upon. You most probably won't need this type of analysis for your class project.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There seems to be a pattern emerging. Let see it with a plot:</p>
+<p><strong>Example1 (Prediction):</strong> Suppose you are real-estate-agent, who buys and sells houses in the Bay Area. One important aspect of your buisness is then to determine the best prices at which you will be able to sell the house in your house pool. So here is your problem:</p>
+<p>At what price should I put this particular house back on the market right now?</p>
+<p>For this particular data analyis problem:</p>
+<ul>
+<li><p>the <strong>ideal population</strong> <span class="math">\(\Omega\)</span> would be the set of <strong>all houses in the Bay Area</strong></p></li>
+<li><p>the <strong>ideal variable collection</strong> would be <strong>all the possible house characteristics</strong> (location, number of rooms, date of construction, current state, size, number of floor, buying price, and what not...)</p></li>
+<li><p>the <strong>ideal time frame</strong> can be taken as now, which means that you may disregard the temporal dimension for this problem althougehter (it is a simplification of course, since housing prices evolve in time...)</p></li>
+</ul>
+<p>Realistically, you'll need to settle down for the houses you can get information on (for instance, by collecting data from the website <a href="http://www.trulia.com/">trulia</a>. As for the variables, a good simple first start would be to consider two variables:</p>
+<ul>
+<li><p>the variable <span class="math">\(X\)</span> giving you the <strong>house size</strong> in feet</p></li>
+<li><p>the variable <span class="math">\(Y\)</span> giving you the <strong>house price</strong> in thousands of dollars</p></li>
+</ul>
+<p>So the data cube you need to construct for this problem is a <strong>data frame</strong> (no time dimension), and the analysis required by your problem is a <strong>variable analysis</strong> (along the column axis). You want to <strong>predict</strong> the value of the variable <span class="math">\(Y\)</span> (called the <strong>target</strong>) frome the values of the variable <span class="math">\(X\)</span>.</p>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[25]:
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example 2 (Correlation):</strong> Suppose your are a professor, and you'd like to know if the homework sets you gave to your students helped them do well in the final exam. Even better, you'd like to know, if at all possible, which homework sets were the most effective.</p>
+<p>Here the <strong>population</strong> <span class="math">\(\Omega\)</span> is again the class students, while the <strong>variables</strong> may be taken to be each of the homework scores, say <span class="math">\(H_1\)</span> to <span class="math">\(H_{14}\)</span>, along with the final score <span class="math">\(F\)</span>. Again, the data cube for this problem is actually a <strong>data frame</strong> with rows corresponding to the students, and columns corresponding to the variables above.</p>
+<p>The question here involves again a <strong>variable</strong> or <strong>column</strong> analysis, but it is not a <strong>prediction</strong> problem in this case, but a <strong>correlation</strong> problem. You want to understand correlation between the homework scores and final scores.</p>
+<p>Beware that this type of <strong>causal of analyis</strong> between variables should be taken with much caution, since <strong>causality relations</strong> of the type &quot;a good grade for homework 8 <strong>causes</strong> a good grade for the final exam are very <strong>hard to determine for sure</strong>.</p>
 </div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">barplot</span><span class="p">(</span><span class="n">release_days</span><span class="p">)</span>
-</pre></div>
-
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example 3 (Description):</strong> Our class professor has just given an exam to his students, and would like to know if the exam was too easy, too hard, or just right. Here we again have <span class="math">\(\Omega\)</span> to be the class students, and we have a single variable <span class="math">\(X\)</span>, the exam score. So our data cube is in fact a <strong>data line</strong>.</p>
+<p>Solving this problems amounts to compute the distribution of grades among the student, and interpret it.</p>
+<p>Observe that this analysis involves a <strong>implicit assumption</strong> about the <strong>probability distribution of grades</strong>: If our class is a typical class, one may assume that the student skills are distributed in a <strong>normal way</strong> with a lot of average students, a fewer number of weak students, and a fewer number of very talented students: the underlying assumption is that talent is shared according to a <strong>normal distribution</strong> among a typical class of students.</p>
+<p>From this assumption, the professor will be able to interpret the exam by observing deviations from this normal distribution pattern. Again, here many things may be going on, and conclusions must be drawn with care.</p>
 </div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<img src="data:image/png;base64,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
-">
-
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Population-Analysis">Population Analysis<a class="anchor-link" href="#Population-Analysis">&#182;</a></h2>
 </div>
 
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p><strong>Population analysis</strong> seeks to identify</p>
+<ul>
+<li><p><strong>identify</strong> natural <strong>groups</strong> or <strong>clusters</strong> in a population</p></li>
+<li><p><strong>explain</strong> these clusters in terms of <strong>extra (or hidden) variables</strong></p></li>
+<li><p><strong>detect anomalies</strong>, <strong>defects</strong>, or <strong>outliers</strong> in the population</p></li>
+</ul>
+</blockquote>
 </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Population analysis is a <strong>row analysis</strong>.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example 1: (Clustering)</strong> Suppose a class professor wants to identify different groups among its students, according to their learning style (for instance: hard-working students having difficulties with the class material, a group lazy but talented students, a group of perfectly balenced students for instance).</p>
+<p>For this purpose, the professor decides to have weekly challenging quizzes requiring no preparation at all, straightforward but voluminous weekly homework assignements, and a fair but comprehensive final exam.</p>
+<p>So here the population <span class="math">\(\Omega\)</span> is the class students, the set of variables is the total quiz grade <span class="math">\(Q\)</span>, the total homework grade <span class="math">\(H\)</span>, and the final grade <span class="math">\(F\)</span>. Suppose that the variable value ranges are all between 0 and 10.</p>
+<p>The question involves a <strong>population analysis</strong>, namely clustering students into different groups, and interpreting these groups, if at all possible, as reflecting different learning styles.</p>
+<p>So for each student <span class="math">\(\omega\in \Omega\)</span>, one can associate a point</p>
+<p><span class="math">\[x_\omega = \big(Q(\omega), H(\omega), F(\omega)\big)\in \mathbb{R}^3\]</span></p>
+<p>Now the whole class can be represented as a <strong>cloud of points</strong> of such points lying in a three dimensional cube.</p>
+<p>We can now look for groups of points that are close to each other, forming independent <strong>clusters</strong>.</p>
+<p>For instance, we may inteprete a cluster of points accumulating around the the cube vertex <span class="math">\((0, 10, 0)\)</span> as being the hard-working students having difficulty with the material, or a cluster of points accumulating around the cube vertex <span class="math">\((10, 0, 0)\)</span> as corresponding to a cluster of student with talent, but not involved in the class.</p>
+<p>It may also be that not cluster at all appear and that all the points accumulate around the cube center <span class="math">\((5, 5, 5)\)</span> indicating a normal distribution centered at score <span class="math">\(5\)</span> of talent, work, and class performance.</p>
+<p>Although cluster may be present in the data, their interpretation should also taken with appropriate care.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example 2 (Anomaly Detection):</strong> Suppose a class professor wants to detect who may have cheated at a given exam. The grading for this exam was negative, and points were removed as new mistakes were appearing during the grading.</p>
+<p>Again, the popluation <span class="math">\(\Omega\)</span> for this problem consists the class students. Now a relevant set of variables for the problem would be the a list of categorical variables with to values corresponding to each of the mistakes encountered in the exam.</p>
+<p>For instance, the variable <span class="math">\(X_i\)</span> would corresponding to mistake number <span class="math">\(i\)</span> and <span class="math">\(X_i(\omega)\)</span> would have value 0 if the student <span class="math">\(\omega\)</span> didn't commit this mistake and value 1 otherwise.</p>
+<p>For each student, one obtain a vector of mistakes:</p>
+<p><span class="math">\[x_\omega = (X_1(\omega),\dots,X_n(\omega))\]</span></p>
+<p>where <span class="math">\(n\)</span> is the total number of mistakes for the exam.</p>
+<p>The problem is a <strong>population analysis</strong> problem where one needs to detect in our student population the individuals having abnormally close mistake vectors, indication potential cheating cases. To be sure, one then need to look at the actual exam copies, and sit placement to confirm the indication.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Time-Analysis">Time Analysis<a class="anchor-link" href="#Time-Analysis">&#182;</a></h2>
 </div>
 
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p><strong>Time analysis</strong> seeks to</p>
+<ul>
+<li><p><strong>describe trends</strong> updownward or downard in a series of time observations</p></li>
+<li><p><strong>identify recuring patterns</strong> such as <strong>cycles</strong> or <strong>constant dependence to past</strong></p></li>
+<li><p><strong>predict</strong> <strong>future</strong> observation values from <strong>past</strong> ones</p></li>
+</ul>
+</blockquote>
 </div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[]:
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Time analysis is an analysis of values along the time dimension.</p>
 </div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb">
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example 1 (Dependence and Prediction):</strong> The price of a given stock at the stock exchange is a very difficult thing to model or to predict. If one considers only the time series of prices for a given stock at the stock exchange as our unique source of information, a first subproblem is to identify whether past prices will influence future prices, and if so, how many price observations should we take into account to try to predict tomorrow price?</p>
+<p>Intuitively, it seems clear that the price of a stock tomorow will be relatively weakly influenced by the stock prices 50 years ago. But what about last year, or last month? Should we only take into account the prices of the past week?</p>
+<p>Here the problem is clearly a <strong>time analysis</strong> problem. The population is formed by a single individual, the stock we are looking at, and there is only one variable, the stock price. So our data cube is actually a <strong>time series</strong>.</p>
+<p>The problem here to determine the level of correlation (or <strong>auto-correlation</strong>) of the price at a given date, and the prices at past dates.</p>
+<p>Of course, this is a very rough analysis, and should be taken with extreme care since the <strong>time scale</strong> we are taking may also change also in time... according to other variables still to be determined.</p>
+<p>A related problem is then, once time scale has been determined for our price prediction (i.e. how far in the past are we going to collect prices for our analysis), we may ask ourselve the problem of predicting tomorrow stock price.</p>
+<p>A very simple approach (and probably very inefficient) would be to use the same type of <strong>regression techniques</strong> we talked about in variable analysis to predict the value of a given variable, the target, given the values of other variables (here the past prices).</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Example 2 (Trend Description):</strong> Consider again the professor question that we saw above:</p>
+<ul>
+<li>Can I identify which of my students have improved in class, and which have regressed?</li>
+</ul>
+<p>So here the <strong>right population</strong> to consider is again the population <span class="math">\(\Omega\)</span> of all the class students.</p>
+<p>The <strong>relevant variables</strong> that may help us answer this question must somehow depend on time. Here are two:</p>
+<ul>
+<li><p>The <strong>weekly</strong> quiz scores <span class="math">\(Q\)</span></p></li>
+<li><p>The <strong>weekly</strong> homework scores <span class="math">\(H\)</span></p></li>
+</ul>
+<p>Both of these variables have a value depending on which week we are observing the quiz or homework score.</p>
+<p>We have 12 weeks in a semester, which gives us a kind of discrete time:</p>
+<p><span class="math">\(T =\{1,2,3, \dots, 12\},\)</span></p>
+<p>where the number <span class="math">\(i\)</span> denotes the <span class="math">\(i^{th}\)</span> week of instruction.</p>
+<p>So both variables take a time <span class="math">\(t\in T\)</span> and student <span class="math">\(\textrm{Bob}\in\Omega\)</span> and yield back two values:</p>
+<p><span class="math">\[Q_t(\textrm{Bob})\qquad \textrm{and}\qquad H_t(\textrm{Bob})\]</span></p>
+<p>which are respectively, the score of Bob at the quiz and homework assignment of week <span class="math">\(t\)</span>.</p>
+<p>Answering the professor question will thus involve a <strong>temporal analysis</strong> of this two variables and identify <strong>upward</strong> or <strong>downward trends</strong> for any given students.</p>
+<p>We will come back to that late. For now, just keep in mind that <strong>your question or problem may involve a temporal aspect</strong>, whose analysis will necessite particular methods.</p>
+<p>You need to be aware of that and to be able to recognize any temporal aspect in your clas project question or problem. This will determine the type of data you'll need to gather and the type of analysis you'll need to perform on it.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Further-data-analysis-ressources">Further data analysis ressources<a class="anchor-link" href="#Further-data-analysis-ressources">&#182;</a></h2>
+</div>
 
-</div>
-</div>
-
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="data-analysis-with-python">Data Analysis with Python</h3>
+<ul>
+<li><a href="http://proquest.safaribooksonline.com/book/programming/python/9781449323592">Python for Data Analysis</a>, by Wes McKinney, Springer (2012)</li>
+<li><a href="http://blog.wesmckinney.com/">Wes McKinney's Blog</a></li>
+<li><p><a href="https://github.com/ipython/ipython/wiki/A-gallery-of-interesting-IPython-Notebooks">Gitup page with iPython notebooks on data analysis (and more)</a></p></li>
+<li><p><a href="http://nbviewer.ipython.org/urls/raw.github.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition/master/ipynb/Chapter%204%20-%20Mining%20Google+.ipynb">Mining the social web</a></p></li>
+</ul>
+<h3 id="data-analysis-with-r">Data Analysis with R</h3>
+<ul>
+<li><p><a href="http://link.springer.com/book/10.1007/978-1-4302-5807-0/page/1">Pro Data Visualization using R and JavaScript</a></p></li>
+<li><p><a href="http://cran.r-project.org/doc/contrib/usingR.pdf">Using R for Data Analysis and Graphics</a> by J. H. Maindonald</p></li>
+<li><p><a href="http://www.r-project.org/">The R Project for Statistical Computing</a></p></li>
+<li><p><a href="http://profjsb.github.io/python-seminar/">Python Computing for Data Science</a></p></li>
+<li><p><a href="http://www.pythonbootcamp.info/schedule">Berkeley Python Bootcamp 2013</a></p></li>
+<li><p><a href="https://sites.google.com/site/pythonbootcamp2012b/agenda">Berkeley Python Bootcamp 2012</a></p></li>
+<li><p><a href="http://www.astro.cornell.edu/staff/loredo/statpy/">Statistical Computing with Python</a></p></li>
+</ul>
+<h3 id="coursera-data-science-lectures">Coursera Data Science lectures</h3>
+<h4 id="directly-related-to-the-class">Directly related to the class</h4>
+<ul>
+<li><p><a href="https://class.coursera.org/dataanalysis-002/class">Data Analysis (R)</a></p></li>
+<li><p><a href="https://class.coursera.org/compdata-003/class">Computing for Data Analyis (R)</a></p></li>
+<li><p><a href="https://class.coursera.org/introstats-001/class/index">Statistics: Making Sense of Data (R)</a></p></li>
+</ul>
+<h4 id="to-further-explore-if-you-have-liked-and-finished-all-of-the-above...">To further explore if you have liked and finished all of the above...</h4>
+<ul>
+<li><p><a href="https://class.coursera.org/networksonline-001/class">Social and Economic Networks: Models and Analysis</a></p></li>
+<li><p><a href="https://class.coursera.org/bigdata-edu-001/class">Big Data in Education</a></p></li>
+<li><p><a href="https://class.coursera.org/bigdata-003/wiki/view?page=ProgrammingAssignmentsHW3">Web Intelligence and Big Data (Python)</a></p></li>
+<li><p><a href="https://class.coursera.org/ml-003/class">Machine Learning (Octave)</a></p></li>
+<li><p><a href="https://class.coursera.org/pgm-003/class">Probabilistic Graphical Models (Octave)</a></p></li>
+</ul>
+<h4 id="further-upcoming-coursera-lectures-you-may-want-to-enroll-in-and-get-a-certificate-here">Further upcoming coursera lectures you may want to enroll in (and get a certificate) <a href="https://www.coursera.org/courses?orderby=upcoming&amp;lngs=en&amp;cats=stats">here</a></h4>
 </div></p>
             </div>
             <!-- /.entry-content -->
