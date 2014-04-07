@@ -15,7 +15,7 @@ from pelicanconf import *
 # of this repository  (Replace accordingly)
 ####################################################################
 
-SITEURL = 'http://benoitdherin.github.io/data-analysis-template'
+SITEURL = 'http://benoitdherin.github.io/data-analysis-with-R'
 
 ####################################################################
 

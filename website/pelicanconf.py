@@ -8,9 +8,9 @@ import os
 ###################################################
 
 AUTHOR = u'Benoit Dherin'
-SITENAME = u'Data Analysis Project'
-SITESUBTITLE = u'Template using the iPython notebook'
-GITHUB_REPOSITORY_URL = u'https://github.com/BenoitDherin/data-analysis-template'
+SITENAME = u'Data Analysis with R'
+SITESUBTITLE = u'and the iPython notebook'
+GITHUB_REPOSITORY_URL = u'https://github.com/BenoitDherin/data-analysis-with-R'
 
 ###################################################
 # FINER WEBSITE CONF (Defaults should be okay)
