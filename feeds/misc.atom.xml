@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Data Analysis with R</title><link href="http://benoitdherin.github.io/data-analysis-with-R/" rel="alternate"></link><link href="http://benoitdherin.github.io/data-analysis-with-R/feeds/misc.atom.xml" rel="self"></link><id>http://benoitdherin.github.io/data-analysis-with-R/</id><updated>2014-03-04T00:00:00-08:00</updated><entry><title>Dimensions</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Dimensions.html" rel="alternate"></link><updated>2014-03-04T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io,2014-03-04:data-analysis-with-R/Dimensions.html</id><summary type="html">&lt;p&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h1 id="lecture-13---the-data-analysis-process"&gt;Lecture 13 - The Data Analysis Process&lt;/h1&gt;
+&lt;p&gt;The dimensions of data analyis: population, variables, and time. The data analysis process: data collection, preparation, analysis, and visualization.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;p&gt;&lt;strong&gt;Lecture outline:&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id="selected-parts-of-the-coursera-data-analysis-lecture-by-jeff-leek"&gt;Selected parts of the coursera &lt;a href="https://class.coursera.org/dataanalysis-002/class/index"&gt;Data Analysis Lecture&lt;/a&gt; by Jeff Leek&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;What is Data Analysis?&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The three dimensions of Data: Population, Variables, and Time&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Determining the ideal data cube for your question/problem&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Further useful online ressources&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://prezi.com/fhumwa8tb3fs/the-landscape-of-data-analysis/"&gt;The landscape of data analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://class.coursera.org/dataanalysis-002/lecture/55"&gt;Types of Data Analysis Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://class.coursera.org/dataanalysis-002/lecture/57"&gt;Sources of Data Sets&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="cell border-box-sizing code_cell vbox"&gt;
@@ -24,18 +23,6 @@ In&amp;nbsp;[1]:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h2 id="What-is-Data-Analysis?"&gt;What is Data Analysis?&lt;a class="anchor-link" href="#What-is-Data-Analysis?"&gt;&amp;#182;&lt;/a&gt;&lt;/h2&gt;
-&lt;/div&gt;
-
-&lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
-&lt;h4 id="selected-parts-of-the-coursera-data-analysis-lecture-by-jeff-leek"&gt;Selected parts of the coursera &lt;a href="https://class.coursera.org/dataanalysis-002/class/index"&gt;Data Analysis Lecture&lt;/a&gt; by Jeff Leek&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://prezi.com/fhumwa8tb3fs/the-landscape-of-data-analysis/"&gt;The landscape of data analysis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://class.coursera.org/dataanalysis-002/lecture/55"&gt;Types of Data Analysis Questions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://class.coursera.org/dataanalysis-002/lecture/57"&gt;Sources of Data Sets&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="text_cell_render border-box-sizing rendered_html"&gt;
 &lt;blockquote&gt;
