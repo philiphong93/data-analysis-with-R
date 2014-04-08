@@ -26,25 +26,27 @@ TRANSLATION_FEED_ATOM = None
 
 # Title menu options (this isn't necessary, but I wanted to have more control)
 DISPLAY_CATEGORIES_ON_MENU = False
-DISPLAY_PAGES_ON_MENU = True
-MENUITEMS = [('Report', 'nb4'),
-             ('Data Analysis', 'nb3'),
-             ('Data Cleaning', 'nb2'),
-             ('Data Gathering', 'nb1'),
-            ]
+DISPLAY_PAGES_ON_MENU = False
+
+#MENUITEMS = [('Report', 'nb4'),
+#             ('Data Analysis', 'nb3'),
+#             ('Data Cleaning', 'nb2'),
+#             ('Data Gathering', 'nb1'),
+#            ]
 
 DISPLAY_TAGS_ON_SIDEBAR = False
 
 # Blogroll
-LINKS = (('Project Report', 'nb4'),
-         ('Data Analysis',  'nb3'),
-         ('Data Cleaning',  'nb2'),
-         ('Data Gathering', 'nb1'),
+LINKS = (('Data Dimensions', 'Dimensions'),
+         ('Variable Analysis',  'Variables'),
+         ('Population Analysis',  'Population'),
+         ('Time Analysis', 'Time'),
+         ('Data Collection', 'Collection'),
+         ('Data Preparation', 'Preparation'),
         )
 
 
 # Social widget
-#SOCIAL = (('View on Github', 'https://github.com/BenoitDherin/data-analysis-template'),)
 SOCIAL = (('View on Github', GITHUB_REPOSITORY_URL),)
 
 DEFAULT_PAGINATION = 10

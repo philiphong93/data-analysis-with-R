@@ -1,7 +1,7 @@
-title: Collection 
+title: Data Collection 
 author: Benoit Dherin 
-date: 2014-03-01
-slug:  Collectionnb1 
+date: 2014-02-26
+slug:  Collection 
 
 {% notebook Collection.ipynb cells[:] %}
 
