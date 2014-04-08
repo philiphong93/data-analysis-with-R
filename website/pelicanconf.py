@@ -63,7 +63,7 @@ PLUGINS = ['summary', 'liquid_tags.img', 'liquid_tags.video',
             'liquid_tags.include_code', 'liquid_tags.notebook',
             'liquid_tags.literal']
 
-#STATIC_PATHS = ['notebooks', 'images', 'files']
+STATIC_PATHS = ['notebooks', 'images', 'data']
 NOTEBOOK_DIR = '../../notebooks'
 
 ## The theme file should be updated so that the base header contains the line:
