@@ -3,7 +3,7 @@
       xmlns:og="http://ogp.me/ns#"
       xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-    <title>The Time Dimension</title>
+    <title>Time Analysis</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -1718,9 +1718,9 @@ init_mathjax();
 
     <!-- Open Graph tags -->
             <meta property="og:type" content="article"/>
-            <meta property="og:title" content="The Time Dimension"/>
+            <meta property="og:title" content="Time Analysis"/>
             <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R/Time.html"/>
-            <meta property="og:description" content=""/>
+            <meta property="og:description" content="The last dimension of data analysis problem is the time dimension. Namely, values collected on a population for a collection of relevant variables have a natural time stamp: the time and date of collection. In certain cases, this time of collection is neither known, nor really relevant to the problem ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://benoitdherin.github.io/data-analysis-with-R/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1790,8 +1790,8 @@ Data Analysis with R            </a>
                 <h1>
                     <a href="http://benoitdherin.github.io/data-analysis-with-R/Time.html"
                        rel="bookmark"
-                       title="Permalink to The Time Dimension">
-                        The Time Dimension
+                       title="Permalink to Time Analysis">
+                        Time Analysis
                     </a>
                 </h1>
             </header>
@@ -1809,7 +1809,25 @@ Data Analysis with R            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p></p>
+                <p>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The last dimension of data analysis problem is the <strong>time dimension</strong>. Namely, values collected on a population for a collection of relevant variables have a natural time stamp: the time and date of collection. In certain cases, this time of collection is neither known, nor really relevant to the problem at hand (for instance, the variables may be taken to be constant in time). On the other hand, a great deal of problems are concerned with the evolution of the variables in time, such the price evolutions in in financial problems.</p>
+<p>As for population and variable analysis the general idea is roughly the same: grouping (and predicting) instant of times together. For instance, one would like to detect <strong>cycles</strong> (i.e. grouping together regularly spaced instant of times for which a variable takes the same value) or change in <strong>trends</strong> (i.e. instant of times in which the general movement passes from an general tendency to increase a general tendency to decrease, and conversely).</p>
+<p>In the process of finding these cycles, trends, and inflexion points, one needs to filter out random and meaningless variations in the evolution, i.e., <strong>random noise</strong>. What remains after filterin out the noise is often call the <strong>signal</strong>.</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight-ipynb"><pre class="ipynb">
+</pre></div>
+
+</div>
+</div>
+
+</div></p>
             </div>
             <!-- /.entry-content -->
         </article>
@@ -1830,23 +1848,28 @@ Data Analysis with R            </a>
 
     <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i>Links</h4></li>
         <li class="list-group-item">
-            <a href="Dimensions" target="_blank">
-                Data Dimensions
+            <a href="index" target="_blank">
+                Home
             </a>
         </li>
         <li class="list-group-item">
-            <a href="Variables" target="_blank">
-                Variable Analysis
+            <a href="Dimensions" target="_blank">
+                Data Analysis
             </a>
         </li>
         <li class="list-group-item">
             <a href="Population" target="_blank">
-                Population Analysis
+                Population
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="Variables" target="_blank">
+                Variables
             </a>
         </li>
         <li class="list-group-item">
             <a href="Time" target="_blank">
-                Time Analysis
+                Time
             </a>
         </li>
         <li class="list-group-item">
