@@ -17,6 +17,7 @@ GITHUB_REPOSITORY_URL = u'https://github.com/BenoitDherin/data-analysis-with-R'
 ###################################################
 
 TIMEZONE = 'US/Pacific'
+
 DEFAULT_LANG = u'en'
 
 # Feed generation is usually not desired when developing
@@ -37,10 +38,11 @@ DISPLAY_PAGES_ON_MENU = False
 DISPLAY_TAGS_ON_SIDEBAR = False
 
 # Blogroll
-LINKS = (('Data Dimensions', 'Dimensions'),
-         ('Variable Analysis',  'Variables'),
-         ('Population Analysis',  'Population'),
-         ('Time Analysis', 'Time'),
+LINKS = (('Home', 'index'),
+         ('Data Analysis', 'Dimensions'),
+         ('Population',  'Population'),
+         ('Variables',  'Variables'),
+         ('Time', 'Time'),
          ('Data Collection', 'Collection'),
          ('Data Preparation', 'Preparation'),
         )
@@ -64,7 +66,7 @@ PLUGINS = ['summary', 'liquid_tags.img', 'liquid_tags.video',
             'liquid_tags.literal']
 
 STATIC_PATHS = ['notebooks', 'images', 'data']
-NOTEBOOK_DIR = '../../notebooks'
+NOTEBOOK_DIR = 'notebooks'
 
 ## The theme file should be updated so that the base header contains the line:
 ##
