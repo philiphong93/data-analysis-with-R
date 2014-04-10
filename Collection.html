@@ -1720,7 +1720,7 @@ init_mathjax();
             <meta property="og:type" content="article"/>
             <meta property="og:title" content="Data Collection"/>
             <meta property="og:url" content="http://benoitdherin.github.io/data-analysis-with-R/Collection.html"/>
-            <meta property="og:description" content="After having set up the data analysis problem and having forged a good idea of the ideal data set for that problem, the first stage of the data analysis processs is to go ahead and gather relevant data in order to build the best possible approximation of the ideal data ..."/>
+            <meta property="og:description" content="After (1) having set up the data analysis problem and (2) having forged yourself a good idea of the ideal data set (and corresponding analysis) for that problem, the first stage of the data analysis processs is to go ahead and gather relevant data in order to build the best ..."/>
 
     <!-- Bootstrap -->
         <link rel="stylesheet" href="http://benoitdherin.github.io/data-analysis-with-R/theme/css/bootstrap.min.css" type="text/css"/>
@@ -1811,9 +1811,17 @@ Data Analysis with R            </a>
                 </div>
                 <p>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>After having set up the data analysis problem and having forged a good idea of the ideal data set for that problem, the <strong>first stage</strong> of the <strong>data analysis processs</strong> is to go ahead and gather relevant data in order to build the best possible approximation of the ideal data set.</p>
-<p>The internet (which one can be seen as a giant interconnected file system from where to retrieve files containing valuable data) is a great place to start. This data, though, may come from various sources and be in various formats; it will need to be unified and be put in the regular form (numerical arrays), so that we can apply our analysis on that data.</p>
-<p>Here we will learn how to use R to download files from the internet, store them into directories in your local file systems, and load the data stored in various formats (csv, json, and XML) into R data frames.</p>
+<p>After (1) having set up the data analysis problem and (2) having forged yourself a good idea of the ideal data set (and corresponding analysis) for that problem, the <strong>first stage</strong> of the <strong>data analysis processs</strong> is to go ahead and gather relevant data in order to build the best possible approximation of that ideal data set.</p>
+<p>The internet (which one can be seen as a giant interconnected file system hosting data files) is a great place to start with. This data, though, may come from various websites and be in various formats. It will need to be unified and be put in regular form, that is, into a collection of numerical arrays, on which to apply the data analysis algorithms described in the previous sections.</p>
+<p>Here we will learn how to use R to</p>
+<ul>
+<li>download files from the internet</li>
+<li>store them into directories on your local file systems</li>
+<li>load data files in various formats (csv, json, and XML) into appropriate R objects</li>
+</ul>
+<p>In particular, we will spend some time on the <strong>XML format</strong>, which stands for <strong>eXtended Markup Language</strong>. The reason why this format is particularly interesting is that, insteand of structuring data in <strong>tabular form</strong>, it structures in the form of a <strong>graph</strong>. A graph is a collection of <strong>nodes</strong> containing the information. These nodes are related to each other through <strong>links</strong>, and one can access the information contained on one node only by travelling the graph from node to node using links.</p>
+<p>Data structured in this form encompass <strong>HTML</strong> pages (HTML can be roughly understood as a dialect of XML), the information hosted by internet websites (websites are related to each other by links, and one can regard google search tool as a way to bypass the graph intrnet graph structure to get to the information directly), a computer file system (where many users store their data as they go, forming an increasing intricate graph of directories and subdirectories as time passes), or the data of user profiles in social media networks.</p>
+<p>Graphical data is not regular and statistical analysis is not readily applicable for data structured in this form. It need first to be transformed into regular data, i.e. cubes of numbers, before statistical analysis can take place.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let us start by learning how to manipulate the local filesystem in your computer from R.</p>
@@ -1915,13 +1923,20 @@ cleaned  raw
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To download a file from the internet in R and store it on the local file system, one uses the function:</p>
-<pre><code>    download.file(fileUrl, destfile, method=&quot;curl&quot;)
+<pre><code>    download.file(fileUrl, destfile)
+    
     </code></pre>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>It is also a <strong>good practice to keep track of the date</strong> the data was downloaded, since data from the web may likely be updated. For that, one can</p>
 <ul>
 <li><p>retrieve the current data with the function <code>date()</code></p></li>
 <li><p>include the date as part of the data file name</p></li>
 </ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, from within the notebook, it is simpler to use bash <code>curl</code> command whose syntax is the following:</p>
+<pre><code>`curl yourURL &gt; localFile`</code></pre>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Example:</strong> The <a href="https://data.baltimorecity.gov/Transportation/Baltimore-Fixed-Speed-Cameras/dz54-2aru">city of Baltimore</a> offers an <strong>API</strong> (Application Programming Interface) allowing us to gather data on speed infractions in <strong>different formats</strong>:</p>
@@ -1942,10 +1957,15 @@ cleaned  raw
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[13]:
 </div>
 <div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb">
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">protocol</span>    <span class="o">=</span> <span class="s">&#39;https://&#39;</span>
+<span class="n">website</span>     <span class="o">=</span>  <span class="s">&#39;data.baltimorecity.gov&#39;</span>
+<span class="n">location</span>    <span class="o">=</span>  <span class="s">&#39;/api/views/dz54-2aru/&#39;</span>
+<span class="n">csvRequest</span>  <span class="o">=</span> <span class="s">&#39;rows.csv?acrows.xml?accessType=DOWNLOAD&#39;</span>
+<span class="n">xmlRequest</span>  <span class="o">=</span> <span class="s">&#39;rows.xml?accessType=DOWNLOAD&#39;</span>
+<span class="n">jsonRequest</span> <span class="o">=</span> <span class="s">&#39;rows.json?accessType=DOWNLOAD&#39;</span>
 </pre></div>
 
 </div>
@@ -1958,41 +1978,23 @@ In&nbsp;[]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[4]:
+In&nbsp;[24]:
 </div>
 <div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">csv_url</span> <span class="o">=</span> <span class="s">&#39;https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?accessType=DOWNLOAD&#39;</span>
+<div class="highlight-ipynb"><pre class="ipynb"><span class="n">csv_url</span> <span class="o">=</span> <span class="n">protocol</span> <span class="o">+</span> <span class="n">website</span> <span class="o">+</span> <span class="n">location</span> <span class="o">+</span> <span class="n">csvRequest</span>
 
-<span class="n">xml_url</span> <span class="o">=</span> <span class="s">&#39;https://data.baltimorecity.gov/api/views/dz54-2aru/rows.xml?accessType=DOWNLOAD&#39;</span>
+<span class="n">xml_url</span> <span class="o">=</span> <span class="n">protocol</span> <span class="o">+</span> <span class="n">website</span> <span class="o">+</span> <span class="n">location</span> <span class="o">+</span> <span class="n">csvRequest</span>
 
-<span class="n">jason_url</span> <span class="o">=</span> <span class="s">&#39;https://data.baltimorecity.gov/api/views/dz54-2aru/rows.json?accessType=DOWNLOAD&#39;</span>
+<span class="n">json_url</span> <span class="o">=</span> <span class="n">protocol</span> <span class="o">+</span> <span class="n">website</span> <span class="o">+</span> <span class="n">location</span> <span class="o">+</span> <span class="n">csvRequest</span>
 
-<span class="n">xls_url</span> <span class="o">=</span> <span class="s">&#39;https://data.baltimorecity.gov/api/views/dz54-2aru/rows.xls?accessType=DOWNLOAD&#39;</span>
-</pre></div>
+<span class="n">xls_url</span> <span class="o">=</span> <span class="n">protocol</span> <span class="o">+</span> <span class="n">website</span> <span class="o">+</span> <span class="n">location</span> <span class="o">+</span> <span class="n">csvRequest</span>
 
-</div>
-</div>
+<span class="k">print</span> <span class="n">csv_url</span><span class="p">;</span> <span class="k">print</span> <span class="n">xml_url</span><span class="p">;</span> <span class="k">print</span> <span class="n">json_url</span><span class="p">;</span> <span class="k">print</span> <span class="n">xls_url</span>
 
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let us prepare prepare the names of the files in which we will store the data:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[11]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">date</span> <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">strsplit</span><span class="p">(</span><span class="n">date</span><span class="p">(),</span> <span class="n">split</span><span class="o">=</span><span class="s">&#39; &#39;</span><span class="p">)[[</span><span class="mi">1</span><span class="p">]],</span> <span class="n">collapse</span><span class="o">=</span><span class="s">&#39;_&#39;</span><span class="p">)</span>
-
-<span class="n">csv_file</span>     <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">,</span><span class="s">&#39;/cameras_&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="s">&#39;.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
-<span class="n">xml_file</span>     <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">,</span><span class="s">&#39;/cameras_&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="s">&#39;.xml&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
-<span class="n">jason_file</span>   <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">,</span><span class="s">&#39;/cameras_&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="s">&#39;.jason&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
-<span class="n">xls_file</span>     <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">,</span><span class="s">&#39;/cameras_&#39;</span><span class="p">,</span> <span class="n">date</span><span class="p">,</span> <span class="s">&#39;.xls&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="n">c</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">xml_file</span><span class="p">,</span> <span class="n">jason_file</span><span class="p">,</span> <span class="n">xls_file</span><span class="p">))</span>
+<span class="o">!</span>curl <span class="nv">$csv_url</span> &gt; baltimore.csv
+<span class="o">!</span>curl <span class="nv">$csv_url</span> &gt; baltimore.xml
+<span class="o">!</span>curl <span class="nv">$csv_url</span> &gt; baltimore.json
+<span class="o">!</span>curl <span class="nv">$csv_url</span> &gt; baltimore.xls
 </pre></div>
 
 </div>
@@ -2003,17 +2005,26 @@ In&nbsp;[11]:
 
 
 <div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
+<div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-[1] &quot;./data/raw/cameras_Tue_Nov_19_17:29:05_2013.csv&quot;  
-[2] &quot;./data/raw/cameras_Tue_Nov_19_17:29:05_2013.xml&quot;  
-[3] &quot;./data/raw/cameras_Tue_Nov_19_17:29:05_2013.jason&quot;
-[4] &quot;./data/raw/cameras_Tue_Nov_19_17:29:05_2013.xls&quot;  
+https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?acrows.xml?accessType=DOWNLOAD
+https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?acrows.xml?accessType=DOWNLOAD
+https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?acrows.xml?accessType=DOWNLOAD
+https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?acrows.xml?accessType=DOWNLOAD
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9294    0  9294    0     0  30827      0 --:--:-- --:--:-- --:--:-- 30877
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9294    0  9294    0     0  41184      0 --:--:-- --:--:-- --:--:-- 41306
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9294    0  9294    0     0  42472      0 --:--:-- --:--:-- --:--:-- 42633
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  9294    0  9294    0     0  43029      0 --:--:-- --:--:-- --:--:-- 43027
 
 </pre>
-
 </div>
 </div>
 
@@ -2022,48 +2033,7 @@ In&nbsp;[11]:
 
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let us now download the actual files:</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[12]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">download</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">csv_url</span><span class="p">,</span><span class="n">destfile</span><span class="o">=</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
-<span class="n">download</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">xml_url</span><span class="p">,</span><span class="n">destfile</span><span class="o">=</span><span class="n">xml_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
-<span class="n">download</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">jason_url</span><span class="p">,</span><span class="n">destfile</span><span class="o">=</span><span class="n">jason_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
-<span class="n">download</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="n">xls_url</span><span class="p">,</span><span class="n">destfile</span><span class="o">=</span><span class="n">xls_file</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;curl&quot;</span><span class="p">)</span>
-
-<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="o">.</span><span class="n">files</span><span class="p">(</span><span class="n">raw_dir</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-
-<div class="vbox output_wrapper">
-<div class="output vbox">
-
-
-<div class="hbox output_area"><div class="prompt"></div>
-<div class="box-flex1 output_subarea output_display_data">
-
-
-<pre>
-[1] &quot;cameras_Tue_Nov_19_17:29:05_2013.csv&quot;  
-[2] &quot;cameras_Tue_Nov_19_17:29:05_2013.jason&quot;
-[3] &quot;cameras_Tue_Nov_19_17:29:05_2013.xls&quot;  
-[4] &quot;cameras_Tue_Nov_19_17:29:05_2013.xml&quot;  
-
-</pre>
-
-</div>
-</div>
-
-</div>
-</div>
-
+<p>Let us prepare prepare the names of the files in which we will store the data:</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Loading-data-into-R">Loading data into R<a class="anchor-link" href="#Loading-data-into-R">&#182;</a></h2>
@@ -2083,11 +2053,11 @@ In&nbsp;[12]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[13]:
+In&nbsp;[25]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="s">&#39;baltimore.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;,&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">TRUE</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
 </pre></div>
 
@@ -2142,7 +2112,7 @@ In&nbsp;[13]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[14]:
+In&nbsp;[27]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">file</span> <span class="n">course</span><span class="o">.</span><span class="n">csv</span>
@@ -2161,7 +2131,7 @@ In&nbsp;[14]:
 <div class="hbox output_area"><div class="prompt"></div>
 <div class="box-flex1 output_subarea output_stream output_stdout">
 <pre>
-Writing course.csv
+Overwriting course.csv
 
 </pre>
 </div>
@@ -2177,7 +2147,7 @@ Writing course.csv
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[15]:
+In&nbsp;[28]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2215,7 +2185,7 @@ In&nbsp;[15]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[]:
+In&nbsp;[29]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">file</span> <span class="n">stat133</span><span class="o">.</span><span class="n">xml</span>
@@ -2244,6 +2214,22 @@ In&nbsp;[]:
     
 <span class="o">&lt;/</span><span class="n">stat133</span><span class="o">&gt;</span>
 </pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_stream output_stdout">
+<pre>
+Writing stat133.xml
+
+</pre>
+</div>
+</div>
 
 </div>
 </div>
@@ -2379,14 +2365,11 @@ In&nbsp;[]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In R, the <strong>XML library</strong> contains <strong>functions</strong> and <strong>classes</strong> to represent <strong>XML documents</strong>.</p>
 <p><strong>Libraries</strong> in R corresponds to <strong>modules</strong> in Python.</p>
-<p>To <strong>install</strong> the XML library (if not already installed), type in this command:</p>
-<pre><code>install.packages(&#39;XML&#39;)</code></pre>
-<p>Then to use this library type in:</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[16]:
+In&nbsp;[31]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2408,7 +2391,7 @@ In&nbsp;[16]:
 
 Attaching package: ‘XML’
 
-The following object(s) are masked from ‘package:tools’:
+The following object is masked from ‘package:tools’:
 
     toHTML
 
@@ -2455,7 +2438,7 @@ root_node = xmlRoot(xml_doc)</code></pre>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[19]:
+In&nbsp;[32]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2478,7 +2461,7 @@ xmlParent(node)</code></pre>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[20]:
+In&nbsp;[33]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2514,7 +2497,7 @@ In&nbsp;[20]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[21]:
+In&nbsp;[34]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2561,7 +2544,7 @@ In&nbsp;[21]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[22]:
+In&nbsp;[35]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2613,7 +2596,7 @@ In&nbsp;[22]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[23]:
+In&nbsp;[36]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2665,7 +2648,7 @@ In&nbsp;[23]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[26]:
+In&nbsp;[37]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2707,7 +2690,7 @@ In&nbsp;[26]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[27]:
+In&nbsp;[38]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2742,7 +2725,7 @@ In&nbsp;[27]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[28]:
+In&nbsp;[39]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2810,7 +2793,7 @@ major : ECON
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[29]:
+In&nbsp;[40]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2829,7 +2812,7 @@ In&nbsp;[29]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[30]:
+In&nbsp;[41]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2864,7 +2847,7 @@ In&nbsp;[30]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[31]:
+In&nbsp;[42]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2899,7 +2882,7 @@ In&nbsp;[31]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[32]:
+In&nbsp;[43]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2939,7 +2922,7 @@ list[&#39;label&#39;]   #yields back a list containing the list element</code></
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[33]:
+In&nbsp;[44]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -2978,7 +2961,7 @@ $grades
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[34]:
+In&nbsp;[45]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -3027,7 +3010,7 @@ $names
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[35]:
+In&nbsp;[46]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -3079,7 +3062,7 @@ mean   sd
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[36]:
+In&nbsp;[47]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -3128,7 +3111,7 @@ $V2
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[37]:
+In&nbsp;[48]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -3185,7 +3168,7 @@ In&nbsp;[37]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[38]:
+In&nbsp;[49]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -3243,7 +3226,7 @@ In&nbsp;[38]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[39]:
+In&nbsp;[50]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -3265,7 +3248,7 @@ In&nbsp;[39]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[40]:
+In&nbsp;[51]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -3304,7 +3287,7 @@ In&nbsp;[40]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[42]:
+In&nbsp;[52]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -3342,7 +3325,7 @@ In&nbsp;[42]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[49]:
+In&nbsp;[53]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -3378,7 +3361,7 @@ student student
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[50]:
+In&nbsp;[54]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
@@ -3394,7 +3377,7 @@ In&nbsp;[50]:
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
-In&nbsp;[51]:
+In&nbsp;[55]:
 </div>
 <div class="input_area box-flex1">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
