@@ -9,6 +9,9 @@ __pycache__/
 
 #Pellican
 *.pid
+ipython2/
+_nb_header.html
+
 #iPython notebook
 .ipynb_checkpoints/
 
