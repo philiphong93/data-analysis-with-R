@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Analysis with R</title><link href="http://benoitdherin.github.io/data-analysis-with-R/" rel="alternate"></link><link href="http://benoitdherin.github.io/data-analysis-with-R/feeds/misc.atom.xml" rel="self"></link><id>http://benoitdherin.github.io/data-analysis-with-R/</id><updated>2014-03-04T00:00:00-08:00</updated><entry><title>Data Analysis</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Dimensions.html" rel="alternate"></link><updated>2014-03-04T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io/data-analysis-with-R,2014-03-04:Dimensions.html</id><summary type="html">&lt;p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Data Analysis with R</title><link href="http://benoitdherin.github.io/data-analysis-with-R/" rel="alternate"></link><link href="http://benoitdherin.github.io/data-analysis-with-R/feeds/misc.atom.xml" rel="self"></link><id>http://benoitdherin.github.io/data-analysis-with-R/</id><updated>2014-03-04T00:00:00-08:00</updated><entry><title>Data Analysis</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Dimensions.html" rel="alternate"></link><updated>2014-03-04T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io,2014-03-04:data-analysis-with-R/Dimensions.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -899,7 +899,7 @@ Again, the data cube for this problem is actually a &lt;strong&gt;data frame&lt;
 &lt;h4 id="further-upcoming-coursera-lectures-you-may-want-to-enroll-in-and-get-a-certificate-here-https-www-coursera-org-courses-orderby-upcoming-lngs-en-cats-stats-"&gt;Further upcoming coursera lectures you may want to enroll in (and get a certificate) &lt;a href="https://www.coursera.org/courses?orderby=upcoming&amp;amp;lngs=en&amp;amp;cats=stats"&gt;here&lt;/a&gt;&lt;/h4&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Population Analysis</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Population.html" rel="alternate"></link><updated>2014-03-04T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io/data-analysis-with-R,2014-03-04:Population.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Population Analysis</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Population.html" rel="alternate"></link><updated>2014-03-04T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io,2014-03-04:data-analysis-with-R/Population.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -8412,7 +8412,7 @@ Name108  69.21623 67.78844  75.13164 28.31154    DOUB
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Variable Analysis</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Variables.html" rel="alternate"></link><updated>2014-03-03T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io/data-analysis-with-R,2014-03-03:Variables.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Variable Analysis</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Variables.html" rel="alternate"></link><updated>2014-03-03T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io,2014-03-03:data-analysis-with-R/Variables.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -18279,7 +18279,7 @@ AmPO/wGi9YVXGRD/zgAAAABJRU5ErkJggg==
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Time Analysis</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Time.html" rel="alternate"></link><updated>2014-03-02T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io/data-analysis-with-R,2014-03-02:Time.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Time Analysis</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Time.html" rel="alternate"></link><updated>2014-03-02T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io,2014-03-02:data-analysis-with-R/Time.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -18305,7 +18305,7 @@ In&amp;nbsp;[]:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Collection</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Collection.html" rel="alternate"></link><updated>2014-02-26T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io/data-analysis-with-R,2014-02-26:Collection.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Collection</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Collection.html" rel="alternate"></link><updated>2014-02-26T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io,2014-02-26:data-analysis-with-R/Collection.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
@@ -20559,7 +20559,7 @@ In&amp;nbsp;[47]:
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Preparation</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Preparation.html" rel="alternate"></link><updated>2014-02-24T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io/data-analysis-with-R,2014-02-24:Preparation.html</id><summary type="html">&lt;p&gt;
+&lt;/div&gt;&lt;/p&gt;</summary></entry><entry><title>Data Preparation</title><link href="http://benoitdherin.github.io/data-analysis-with-R/Preparation.html" rel="alternate"></link><updated>2014-02-24T00:00:00-08:00</updated><author><name>Benoit Dherin</name></author><id>tag:benoitdherin.github.io,2014-02-24:data-analysis-with-R/Preparation.html</id><summary type="html">&lt;p&gt;
 &lt;div class="cell border-box-sizing text_cell rendered"&gt;
 &lt;div class="prompt input_prompt"&gt;
 &lt;/div&gt;
