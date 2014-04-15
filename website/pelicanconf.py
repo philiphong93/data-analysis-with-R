@@ -20,7 +20,7 @@ TIMEZONE = 'US/Pacific'
 
 DEFAULT_LANG = u'en'
 
-PYGMENTS_STYLE='trac'
+#PYGMENTS_STYLE='trac'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
