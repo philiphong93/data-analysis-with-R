@@ -1782,7 +1782,7 @@ Data Analysis with R            </a>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[31]:
+In&nbsp;[60]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -1790,23 +1790,6 @@ In&nbsp;[31]:
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-The rmagic extension is already loaded. To reload it, use:
-  %reload_ext rmagic
-
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -1993,7 +1976,7 @@ The rmagic extension is already loaded. To reload it, use:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[32]:
+In&nbsp;[30]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2037,14 +2020,14 @@ rank|name|box|date
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[33]:
+In&nbsp;[32]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span> <span class="o">-</span><span class="n">i</span> <span class="n">url</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">delim</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;|&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">T</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2118,13 +2101,13 @@ In&nbsp;[33]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[4]:
+In&nbsp;[35]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="n">modes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">class</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">modes</span><span class="p">)</span>
+<span class="n">modes</span>
 </pre></div>
 
 </div>
@@ -2165,7 +2148,7 @@ In&nbsp;[4]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[5]:
+In&nbsp;[36]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2198,12 +2181,12 @@ In&nbsp;[5]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[6]:
+In&nbsp;[39]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">levels</span><span class="p">(</span><span class="n">sex</span><span class="p">))</span>
+<span class="n">levels</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2242,12 +2225,12 @@ In&nbsp;[6]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[7]:
+In&nbsp;[40]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">sex</span><span class="p">)</span>
+<span class="n">sex</span>
 </pre></div>
 
 </div>
@@ -2287,7 +2270,7 @@ Levels: F M
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[8]:
+In&nbsp;[41]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2331,13 +2314,13 @@ In&nbsp;[8]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[9]:
+In&nbsp;[42]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="n">df</span>    <span class="o">=</span> <span class="n">read</span><span class="o">.</span><span class="n">delim</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;|&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="n">T</span><span class="p">,</span> <span class="n">stringsAsFactors</span><span class="o">=</span><span class="n">F</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2382,14 +2365,14 @@ In&nbsp;[9]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[10]:
+In&nbsp;[45]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="n">modes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">class</span><span class="p">))</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">modes</span><span class="p">);</span> <span class="n">cat</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">);</span> <span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">modes</span><span class="p">);</span> <span class="n">cat</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\n\n</span><span class="s">&#39;</span><span class="p">);</span> <span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2458,7 +2441,7 @@ In&nbsp;[10]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[11]:
+In&nbsp;[46]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2466,7 +2449,7 @@ In&nbsp;[11]:
 <span class="n">a</span> <span class="o">=</span> <span class="k">as</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="s">&#39;December 18, 2009&#39;</span><span class="p">,</span> <span class="s">&#39;%B </span><span class="si">%d</span><span class="s">, %Y&#39;</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="k">as</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="s">&#39;January 29, 2013&#39;</span><span class="p">,</span> <span class="s">&#39;%B </span><span class="si">%d</span><span class="s">, %Y&#39;</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
+<span class="n">b</span><span class="o">-</span><span class="n">a</span>
 </pre></div>
 
 </div>
@@ -2505,13 +2488,13 @@ Time difference of 1138 days
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[12]:
+In&nbsp;[47]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="n">df</span><span class="err">$</span><span class="n">date</span> <span class="o">=</span> <span class="k">as</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">df</span><span class="err">$</span><span class="n">date</span><span class="p">,</span> <span class="s">&#39;%B </span><span class="si">%d</span><span class="s">, %Y&#39;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">head</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2572,12 +2555,12 @@ In&nbsp;[12]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[13]:
+In&nbsp;[48]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">df</span><span class="err">$</span><span class="n">box</span><span class="p">)))</span>
+<span class="n">head</span><span class="p">(</span><span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">df</span><span class="err">$</span><span class="n">box</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -2660,7 +2643,7 @@ In&nbsp;[13]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[14]:
+In&nbsp;[49]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2671,7 +2654,7 @@ In&nbsp;[14]:
 
 <span class="n">box_values</span> <span class="o">=</span> <span class="n">sub</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">replacement</span><span class="p">,</span> <span class="n">df</span><span class="err">$</span><span class="n">box</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">tail</span><span class="p">(</span><span class="n">box_values</span><span class="p">))</span>
+<span class="n">tail</span><span class="p">(</span><span class="n">box_values</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2710,13 +2693,13 @@ In&nbsp;[14]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[15]:
+In&nbsp;[50]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="n">df</span><span class="err">$</span><span class="n">box</span> <span class="o">=</span> <span class="k">as</span><span class="o">.</span><span class="n">numeric</span><span class="p">(</span><span class="n">box_values</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">tail</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+<span class="n">tail</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2761,7 +2744,7 @@ In&nbsp;[15]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[16]:
+In&nbsp;[17]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2777,7 +2760,7 @@ In&nbsp;[16]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[17]:
+In&nbsp;[51]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -2786,7 +2769,7 @@ In&nbsp;[17]:
 
 <span class="n">movies</span><span class="err">$</span><span class="n">date</span> <span class="o">=</span> <span class="k">as</span><span class="o">.</span><span class="n">Date</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">date</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">movies</span><span class="p">))</span>
+<span class="n">head</span><span class="p">(</span><span class="n">movies</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2822,12 +2805,12 @@ In&nbsp;[17]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[18]:
+In&nbsp;[52]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">head</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">movies</span><span class="p">,</span> <span class="n">class</span><span class="p">))))</span>
+<span class="n">head</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">lapply</span><span class="p">(</span><span class="n">movies</span><span class="p">,</span> <span class="n">class</span><span class="p">)))</span>
 </pre></div>
 
 </div>
@@ -2878,12 +2861,12 @@ In&nbsp;[18]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[19]:
+In&nbsp;[53]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
-<span class="k">print</span><span class="p">(</span><span class="n">summary</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">box</span><span class="p">))</span>
+<span class="n">summary</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">box</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2929,7 +2912,7 @@ In&nbsp;[19]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[30]:
+In&nbsp;[54]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3068,7 +3051,7 @@ by</p>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[21]:
+In&nbsp;[55]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3129,7 +3112,7 @@ In&nbsp;[21]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[28]:
+In&nbsp;[23]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3284,7 +3267,7 @@ months(date)
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[23]:
+In&nbsp;[56]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
@@ -3293,7 +3276,7 @@ In&nbsp;[23]:
 
 <span class="n">movies</span><span class="err">$</span><span class="n">weekday</span> <span class="o">=</span> <span class="n">factor</span><span class="p">(</span><span class="n">weekdays</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">date</span><span class="p">),</span> <span class="n">levels</span><span class="o">=</span><span class="n">days</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="n">tail</span><span class="p">(</span><span class="n">movies</span><span class="p">))</span>
+<span class="n">tail</span><span class="p">(</span><span class="n">movies</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -3338,13 +3321,13 @@ In&nbsp;[23]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[24]:
+In&nbsp;[57]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
 <div class="highlight-ipynb"><pre class="ipynb"><span class="o">%%</span><span class="k">R</span>
 <span class="n">release_days</span> <span class="o">=</span> <span class="n">table</span><span class="p">(</span><span class="n">movies</span><span class="err">$</span><span class="n">weekday</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">release_days</span><span class="p">)</span>
+<span class="n">release_days</span>
 </pre></div>
 
 </div>
@@ -3385,7 +3368,7 @@ In&nbsp;[24]:
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">
-In&nbsp;[27]:
+In&nbsp;[58]:
 </div>
 <div class="inner_cell">
     <div class="input_area">
